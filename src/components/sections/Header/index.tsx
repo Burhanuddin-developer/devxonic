@@ -1,21 +1,30 @@
-'use client';
+"use client";
 
-import { useRouter } from 'next/navigation';
-import { useEffect, useState } from 'react';
-import { FaBars, FaTimes } from 'react-icons/fa';
-import Image from 'next/image';
-import Link from 'next/link';
+import { useRouter } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
+import {
+  FaBars,
+  FaCheckCircle,
+  FaCloud,
+  FaCogs,
+  FaGlobe,
+  FaMobileAlt,
+  FaTimes,
+} from "react-icons/fa";
+import Image from "next/image";
+import Link from "next/link";
+
 const Header = () => {
   const router = useRouter();
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isProjectsOpen, setIsProjectsOpen] = useState(false);
   const [isMouseOnPopup, setIsMouseOnPopup] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  let popupCloseTimeout: string | number | NodeJS.Timeout | undefined;
+  const popupCloseTimeout = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     return () => {
-      clearTimeout(popupCloseTimeout);
+      if (popupCloseTimeout.current) clearTimeout(popupCloseTimeout.current);
     };
   }, []);
 
@@ -30,11 +39,11 @@ const Header = () => {
       <div className="flex items-center justify-between px-6 py-6 md:px-8 md:py-8">
         <a href="/">
           <Image
-          src="https://testweb.devxonic.com/wp-content/uploads/2024/08/devxonic-logo-white-1.png"
-          alt="Devxonic Logo"
-          width={200}
-          height={80}
-        />
+            src="https://testweb.devxonic.com/wp-content/uploads/2024/08/devxonic-logo-white-1.png"
+            alt="Devxonic Logo"
+            width={200}
+            height={80}
+          />
         </a>
 
         {/* Mobile Hamburger */}
@@ -50,69 +59,88 @@ const Header = () => {
 
           <div
             onMouseEnter={() => {
-              clearTimeout(popupCloseTimeout);
+              if (popupCloseTimeout.current)
+                clearTimeout(popupCloseTimeout.current);
               setIsServicesOpen(true);
             }}
             onMouseLeave={() => {
-              popupCloseTimeout = setTimeout(() => {
+              popupCloseTimeout.current = setTimeout(() => {
                 if (!isMouseOnPopup) setIsServicesOpen(false);
               }, 300);
             }}
             className="relative"
           >
-            <button>Service</button>
-            {isServicesOpen && (
-              <div
-                className="absolute top-8 left-0 bg-white text-black rounded shadow-lg py-2 w-48 text-sm"
-                onMouseEnter={() => setIsMouseOnPopup(true)}
-                onMouseLeave={() => {
-                  setIsMouseOnPopup(false);
-                  popupCloseTimeout = setTimeout(() => {
-                    setIsServicesOpen(false);
-                  }, 300);
-                }}
-              >
-                <a href="/services/ui-ux" className="block px-4 py-2 hover:bg-purple-100">UI/UX Design</a>
-                <a href="/services/web-dev" className="block px-4 py-2 hover:bg-purple-100">Web Development</a>
-                <a href="/services/seo" className="block px-4 py-2 hover:bg-purple-100">SEO</a>
-                <a href="/services/cloud" className="block px-4 py-2 hover:bg-purple-100">Cloud Services</a>
-              </div>
-            )}
+            <button aria-haspopup="true" aria-expanded={isServicesOpen}>
+              Services
+            </button>
+           {isServicesOpen && (
+  <div
+    className="absolute top-8 left-0 backdrop-blur-md bg-gray-100/70 text-black rounded shadow-xl py-4 px-4 w-[720px] text-sm z-50"
+    onMouseEnter={() => setIsMouseOnPopup(true)}
+    onMouseLeave={() => {
+      setIsMouseOnPopup(false);
+      popupCloseTimeout.current = setTimeout(() => {
+        setIsServicesOpen(false);
+      }, 300);
+    }}
+  >
+    <ServiceTabs />
+  </div>
+)}
+
           </div>
 
           <div
             onMouseEnter={() => {
-              clearTimeout(popupCloseTimeout);
+              if (popupCloseTimeout.current)
+                clearTimeout(popupCloseTimeout.current);
               setIsProjectsOpen(true);
             }}
             onMouseLeave={() => {
-              popupCloseTimeout = setTimeout(() => {
+              popupCloseTimeout.current = setTimeout(() => {
                 if (!isMouseOnPopup) setIsProjectsOpen(false);
               }, 300);
             }}
             className="relative"
           >
-            <button>Projects</button>
+            <button aria-haspopup="true" aria-expanded={isProjectsOpen}>
+              Projects
+            </button>
             {isProjectsOpen && (
               <div
                 className="absolute top-8 left-0 bg-white text-black rounded shadow-lg py-2 w-48 text-sm"
                 onMouseEnter={() => setIsMouseOnPopup(true)}
                 onMouseLeave={() => {
                   setIsMouseOnPopup(false);
-                  popupCloseTimeout = setTimeout(() => {
+                  popupCloseTimeout.current = setTimeout(() => {
                     setIsProjectsOpen(false);
                   }, 300);
                 }}
               >
-                <a href="/projects/corporate" className="block px-4 py-2 hover:bg-purple-100">Corporate</a>
-                <a href="/projects/startups" className="block px-4 py-2 hover:bg-purple-100">Startups</a>
-                <a href="/projects/ecommerce" className="block px-4 py-2 hover:bg-purple-100">E-Commerce</a>
+                <a
+                  href="/projects/corporate"
+                  className="block px-4 py-2 hover:bg-purple-100"
+                >
+                  Corporate
+                </a>
+                <a
+                  href="/projects/startups"
+                  className="block px-4 py-2 hover:bg-purple-100"
+                >
+                  Startups
+                </a>
+                <a
+                  href="/projects/ecommerce"
+                  className="block px-4 py-2 hover:bg-purple-100"
+                >
+                  E-Commerce
+                </a>
               </div>
             )}
           </div>
 
           <a href="/about">About</a>
-         <button onClick={() => router.push('/Blog')}>Blog</button>
+          <button onClick={() => router.push("/blog")}>Blog</button>
           <a href="/contact">Contact</a>
         </nav>
 
@@ -127,34 +155,60 @@ const Header = () => {
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="md:hidden bg-[#111827] text-white px-6 py-4 space-y-4">
-          <a href="/" onClick={closeMobileMenu}>Home</a>
+          <a href="/" onClick={closeMobileMenu}>
+            Home
+          </a>
 
           <div>
-            <button onClick={() => setIsServicesOpen(!isServicesOpen)}>Services</button>
+            <button onClick={() => setIsServicesOpen(!isServicesOpen)}>
+              Services
+            </button>
             {isServicesOpen && (
               <div className="pl-4 mt-2 space-y-2">
-                <a href="/services/ui-ux" onClick={closeMobileMenu}>UI/UX Design</a>
-                <a href="/services/web-dev" onClick={closeMobileMenu}>Web Development</a>
-                <a href="/services/seo" onClick={closeMobileMenu}>SEO</a>
-                <a href="/services/cloud" onClick={closeMobileMenu}>Cloud Services</a>
+                <a href="/services/ui-ux" onClick={closeMobileMenu}>
+                  UI/UX Design
+                </a>
+                <a href="/services/web-dev" onClick={closeMobileMenu}>
+                  Web Development
+                </a>
+                <a href="/services/seo" onClick={closeMobileMenu}>
+                  SEO
+                </a>
+                <a href="/services/cloud" onClick={closeMobileMenu}>
+                  Cloud Services
+                </a>
               </div>
             )}
           </div>
 
           <div>
-            <button onClick={() => setIsProjectsOpen(!isProjectsOpen)}>Projects</button>
+            <button onClick={() => setIsProjectsOpen(!isProjectsOpen)}>
+              Projects
+            </button>
             {isProjectsOpen && (
               <div className="pl-4 mt-2 space-y-2">
-                <a href="/projects/corporate" onClick={closeMobileMenu}>Corporate</a>
-                <a href="/projects/startups" onClick={closeMobileMenu}>Startups</a>
-                <a href="/projects/ecommerce" onClick={closeMobileMenu}>E-Commerce</a>
+                <a href="/projects/corporate" onClick={closeMobileMenu}>
+                  Corporate
+                </a>
+                <a href="/projects/startups" onClick={closeMobileMenu}>
+                  Startups
+                </a>
+                <a href="/projects/ecommerce" onClick={closeMobileMenu}>
+                  E-Commerce
+                </a>
               </div>
             )}
           </div>
 
-          <a href="/about" onClick={closeMobileMenu}>About</a>
-          <a href="/blog" onClick={closeMobileMenu}>Blog</a>
-          <a href="/contact" onClick={closeMobileMenu}>Contact</a>
+          <a href="/about" onClick={closeMobileMenu}>
+            About
+          </a>
+          <a href="/blog" onClick={closeMobileMenu}>
+            Blog
+          </a>
+          <a href="/contact" onClick={closeMobileMenu}>
+            Contact
+          </a>
 
           <a
             href="https://calendly.com/contact-devxonic/30min"
@@ -169,3 +223,141 @@ const Header = () => {
 };
 
 export default Header;
+
+const ServiceTabs = () => {
+  const [activeTab, setActiveTab] = useState("App Development");
+
+  const tabs = [
+    {
+      name: "App Development",
+      link: "/services/ui-ux",
+      description: [
+        {
+          label: "Android App Development",
+          icon: <FaMobileAlt className="text-purple-600" />,
+        },
+        {
+          label: "iOS App Development",
+          icon: <FaMobileAlt className="text-purple-600" />,
+        },
+        {
+          label: "Web App Development",
+          icon: <FaGlobe className="text-purple-600" />,
+        },
+        {
+          label: "Realtime App Development",
+          icon: <FaCogs className="text-purple-600" />,
+        },
+        {
+          label: "React Native App Development",
+          icon: <FaMobileAlt className="text-purple-600" />,
+        },
+        {
+          label: "FullStack App Development",
+          icon: <FaCogs className="text-purple-600" />,
+        },
+      ],
+    },
+    {
+      name: "Web Dev",
+      link: "/services/web-dev",
+      description: [
+        {
+          label: "Next.js / React / Vue",
+          icon: <FaGlobe className="text-purple-600" />,
+        },
+        {
+          label: "Responsive Web Design",
+          icon: <FaGlobe className="text-purple-600" />,
+        },
+        {
+          label: "CMS & Custom Development",
+          icon: <FaCogs className="text-purple-600" />,
+        },
+        {
+          label: "API Integration",
+          icon: <FaCogs className="text-purple-600" />,
+        },
+      ],
+    },
+    {
+      name: "SEO",
+      link: "/services/seo",
+      description: [
+        {
+          label: "Technical SEO",
+          icon: <FaCheckCircle className="text-purple-600" />,
+        },
+        {
+          label: "On-page Optimization",
+          icon: <FaCheckCircle className="text-purple-600" />,
+        },
+        {
+          label: "Keyword Strategy",
+          icon: <FaCheckCircle className="text-purple-600" />,
+        },
+        {
+          label: "Performance Tuning",
+          icon: <FaCheckCircle className="text-purple-600" />,
+        },
+      ],
+    },
+    {
+      name: "Cloud",
+      link: "/services/cloud",
+      description: [
+        {
+          label: "AWS / GCP / Azure Deployment",
+          icon: <FaCloud className="text-purple-600" />,
+        },
+        {
+          label: "Serverless Architecture",
+          icon: <FaCloud className="text-purple-600" />,
+        },
+        {
+          label: "CI/CD Pipelines",
+          icon: <FaCloud className="text-purple-600" />,
+        },
+        {
+          label: "Cloud Migration",
+          icon: <FaCloud className="text-purple-600" />,
+        },
+      ],
+    },
+  ];
+
+  const currentTab = tabs.find((tab) => tab.name === activeTab);
+
+  return (
+    <div className="flex w-[700px] min-h-[300px] p-4">
+      {/* Left side tabs */}
+      <div className="w-1/3 pr-4 border-r border-gray-200">
+        {tabs.map((tab) => (
+          <button
+            key={tab.name}
+            onClick={() => setActiveTab(tab.name)}
+            className={`block w-full text-left px-4 py-3 rounded-md mb-2 text-md font-medium transition ${
+              tab.name === activeTab
+                ? "bg-purple-100 text-black"
+                : "text-gray-600 hover:bg-gray-100"
+            }`}
+          >
+            {tab.name}
+          </button>
+        ))}
+      </div>
+
+      {/* Right side content */}
+      <div className="w-2/3 pl-6">
+        <ul className="space-y-3">
+          {currentTab?.description?.map((point, index) => (
+            <li key={index} className="flex items-start text-gray-800 text-md">
+              <span className="mt-1 mr-3 text-lg">{point.icon}</span>
+              <span>{point.label}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+};
