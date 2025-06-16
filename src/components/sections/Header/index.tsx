@@ -140,7 +140,7 @@ const Header = () => {
           </div>
 
           <a href="/about">About</a>
-          <button onClick={() => router.push("/blog")}>Blog</button>
+          <button onClick={() => router.push("/Blog")}>Blog</button>
           <a href="/contact">Contact</a>
         </nav>
 
