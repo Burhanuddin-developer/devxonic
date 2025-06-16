@@ -158,28 +158,16 @@ const Header = () => {
           <a href="/" onClick={closeMobileMenu}>
             Home
           </a>
-
-          <div>
-            <button onClick={() => setIsServicesOpen(!isServicesOpen)}>
-              Services
-            </button>
-            {isServicesOpen && (
-              <div className="pl-4 mt-2 space-y-2">
-                <a href="/services/ui-ux" onClick={closeMobileMenu}>
-                  UI/UX Design
-                </a>
-                <a href="/services/web-dev" onClick={closeMobileMenu}>
-                  Web Development
-                </a>
-                <a href="/services/seo" onClick={closeMobileMenu}>
-                  SEO
-                </a>
-                <a href="/services/cloud" onClick={closeMobileMenu}>
-                  Cloud Services
-                </a>
-              </div>
-            )}
-          </div>
+<div>
+  <button onClick={() => setIsServicesOpen(!isServicesOpen)}>
+    Services
+  </button>
+  {isServicesOpen && (
+    <div className="mt-4 border-t border-gray-700 pt-4">
+      <ServiceTabsMobile />
+    </div>
+  )}
+</div>
 
           <div>
             <button onClick={() => setIsProjectsOpen(!isProjectsOpen)}>
@@ -358,6 +346,83 @@ const ServiceTabs = () => {
           ))}
         </ul>
       </div>
+    </div>
+  );
+};
+const ServiceTabsMobile = () => {
+  const [activeTab, setActiveTab] = useState("App Development");
+
+  const tabs = [
+    {
+      name: "App Development",
+      description: [
+        { label: "Android App Development", icon: <FaMobileAlt /> },
+        { label: "iOS App Development", icon: <FaMobileAlt /> },
+        { label: "Web App Development", icon: <FaGlobe /> },
+        { label: "Realtime App Development", icon: <FaCogs /> },
+        { label: "React Native App Development", icon: <FaMobileAlt /> },
+        { label: "FullStack App Development", icon: <FaCogs /> },
+      ],
+    },
+    {
+      name: "Web Dev",
+      description: [
+        { label: "Next.js / React / Vue", icon: <FaGlobe /> },
+        { label: "Responsive Web Design", icon: <FaGlobe /> },
+        { label: "CMS & Custom Development", icon: <FaCogs /> },
+        { label: "API Integration", icon: <FaCogs /> },
+      ],
+    },
+    {
+      name: "SEO",
+      description: [
+        { label: "Technical SEO", icon: <FaCheckCircle /> },
+        { label: "On-page Optimization", icon: <FaCheckCircle /> },
+        { label: "Keyword Strategy", icon: <FaCheckCircle /> },
+        { label: "Performance Tuning", icon: <FaCheckCircle /> },
+      ],
+    },
+    {
+      name: "Cloud",
+      description: [
+        { label: "AWS / GCP / Azure Deployment", icon: <FaCloud /> },
+        { label: "Serverless Architecture", icon: <FaCloud /> },
+        { label: "CI/CD Pipelines", icon: <FaCloud /> },
+        { label: "Cloud Migration", icon: <FaCloud /> },
+      ],
+    },
+  ];
+
+  const currentTab = tabs.find((tab) => tab.name === activeTab);
+
+  return (
+    <div className="flex flex-col gap-4">
+      {/* Tabs */}
+      <div className="flex flex-wrap gap-2">
+        {tabs.map((tab) => (
+          <button
+            key={tab.name}
+            onClick={() => setActiveTab(tab.name)}
+            className={`px-3 py-1.5 rounded-full text-sm font-semibold ${
+              tab.name === activeTab
+                ? "bg-white text-black"
+                : "bg-gray-800 text-gray-300"
+            }`}
+          >
+            {tab.name}
+          </button>
+        ))}
+      </div>
+
+      {/* Description */}
+      <ul className="space-y-2 mt-2">
+        {currentTab?.description.map((point, idx) => (
+          <li key={idx} className="flex items-center gap-3 text-sm">
+            <span className="text-purple-400">{point.icon}</span>
+            <span>{point.label}</span>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
