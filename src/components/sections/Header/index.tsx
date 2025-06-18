@@ -13,7 +13,101 @@ import {
 } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
+const serviceTabs = [
+  {
+    name: "App Development",
+    description: [
+      {
+        label: "Android App Development",
+        icon: <FaMobileAlt className="text-purple-600" />,
+      },
+      {
+        label: "iOS App Development",
+        icon: <FaMobileAlt className="text-purple-600" />,
+      },
+      {
+        label: "Web App Development",
+        icon: <FaGlobe className="text-purple-600" />,
+      },
+      {
+        label: "Realtime App Development",
+        icon: <FaCogs className="text-purple-600" />,
+      },
+      {
+        label: "React Native App Development",
+        icon: <FaMobileAlt className="text-purple-600" />,
+      },
+      {
+        label: "FullStack App Development",
+        icon: <FaCogs className="text-purple-600" />,
+      },
+    ],
+  },
+  {
+    name: "Web Dev",
 
+    description: [
+      {
+        label: "Next.js / React / Vue",
+        icon: <FaGlobe className="text-purple-600" />,
+      },
+      {
+        label: "Responsive Web Design",
+        icon: <FaGlobe className="text-purple-600" />,
+      },
+      {
+        label: "CMS & Custom Development",
+        icon: <FaCogs className="text-purple-600" />,
+      },
+      {
+        label: "API Integration",
+        icon: <FaCogs className="text-purple-600" />,
+      },
+    ],
+  },
+  {
+    name: "Devops",
+    description: [
+      {
+        label: "Technical SEO",
+        icon: <FaCheckCircle className="text-purple-600" />,
+      },
+      {
+        label: "On-page Optimization",
+        icon: <FaCheckCircle className="text-purple-600" />,
+      },
+      {
+        label: "Keyword Strategy",
+        icon: <FaCheckCircle className="text-purple-600" />,
+      },
+      {
+        label: "Performance Tuning",
+        icon: <FaCheckCircle className="text-purple-600" />,
+      },
+    ],
+  },
+  {
+    name: "Industries",
+    description: [
+      {
+        label: "AWS / GCP / Azure Deployment",
+        icon: <FaCloud className="text-purple-600" />,
+      },
+      {
+        label: "Serverless Architecture",
+        icon: <FaCloud className="text-purple-600" />,
+      },
+      {
+        label: "CI/CD Pipelines",
+        icon: <FaCloud className="text-purple-600" />,
+      },
+      {
+        label: "Cloud Migration",
+        icon: <FaCloud className="text-purple-600" />,
+      },
+    ],
+  },
+];
 const Header = () => {
   const router = useRouter();
   const [isServicesOpen, setIsServicesOpen] = useState(false);
@@ -33,6 +127,7 @@ const Header = () => {
     setIsProjectsOpen(false);
     setIsServicesOpen(false);
   };
+
 
   return (
     <header className="relative top-0 left-0 w-full z-50 text-white backdrop-blur-md">
@@ -73,9 +168,9 @@ const Header = () => {
             <button aria-haspopup="true" aria-expanded={isServicesOpen}>
               Services
             </button>
-           {isServicesOpen && (
+{isServicesOpen && (
   <div
-    className="absolute top-8 left-0 backdrop-blur-md bg-gray-100/70 text-black rounded shadow-xl py-4 px-4 w-[720px] text-sm z-50"
+    className="absolute top-8 md:left-30 -translate-x-1/2 bg-[#010314]/80 backdrop-blur-md text-white rounded shadow-xl py-4 px-4 md:w-250 md:h-100 text-sm z-50"
     onMouseEnter={() => setIsMouseOnPopup(true)}
     onMouseLeave={() => {
       setIsMouseOnPopup(false);
@@ -212,122 +307,23 @@ const Header = () => {
 
 export default Header;
 
+
 const ServiceTabs = () => {
-  const [activeTab, setActiveTab] = useState("App Development");
+  const [activeTab, setActiveTab] = useState(serviceTabs[0].name);
 
-  const tabs = [
-    {
-      name: "App Development",
-      link: "/services/ui-ux",
-      description: [
-        {
-          label: "Android App Development",
-          icon: <FaMobileAlt className="text-purple-600" />,
-        },
-        {
-          label: "iOS App Development",
-          icon: <FaMobileAlt className="text-purple-600" />,
-        },
-        {
-          label: "Web App Development",
-          icon: <FaGlobe className="text-purple-600" />,
-        },
-        {
-          label: "Realtime App Development",
-          icon: <FaCogs className="text-purple-600" />,
-        },
-        {
-          label: "React Native App Development",
-          icon: <FaMobileAlt className="text-purple-600" />,
-        },
-        {
-          label: "FullStack App Development",
-          icon: <FaCogs className="text-purple-600" />,
-        },
-      ],
-    },
-    {
-      name: "Web Dev",
-      link: "/services/web-dev",
-      description: [
-        {
-          label: "Next.js / React / Vue",
-          icon: <FaGlobe className="text-purple-600" />,
-        },
-        {
-          label: "Responsive Web Design",
-          icon: <FaGlobe className="text-purple-600" />,
-        },
-        {
-          label: "CMS & Custom Development",
-          icon: <FaCogs className="text-purple-600" />,
-        },
-        {
-          label: "API Integration",
-          icon: <FaCogs className="text-purple-600" />,
-        },
-      ],
-    },
-    {
-      name: "SEO",
-      link: "/services/seo",
-      description: [
-        {
-          label: "Technical SEO",
-          icon: <FaCheckCircle className="text-purple-600" />,
-        },
-        {
-          label: "On-page Optimization",
-          icon: <FaCheckCircle className="text-purple-600" />,
-        },
-        {
-          label: "Keyword Strategy",
-          icon: <FaCheckCircle className="text-purple-600" />,
-        },
-        {
-          label: "Performance Tuning",
-          icon: <FaCheckCircle className="text-purple-600" />,
-        },
-      ],
-    },
-    {
-      name: "Cloud",
-      link: "/services/cloud",
-      description: [
-        {
-          label: "AWS / GCP / Azure Deployment",
-          icon: <FaCloud className="text-purple-600" />,
-        },
-        {
-          label: "Serverless Architecture",
-          icon: <FaCloud className="text-purple-600" />,
-        },
-        {
-          label: "CI/CD Pipelines",
-          icon: <FaCloud className="text-purple-600" />,
-        },
-        {
-          label: "Cloud Migration",
-          icon: <FaCloud className="text-purple-600" />,
-        },
-      ],
-    },
-  ];
-
-  const currentTab = tabs.find((tab) => tab.name === activeTab);
+  const currentTab = serviceTabs.find((tab) => tab.name === activeTab);
 
   return (
-    <div className="flex w-[700px] min-h-[300px] p-4">
-      {/* Left side tabs */}
-      <div className="w-1/3 pr-4 border-r border-gray-200">
-        {tabs.map((tab) => (
+    <div className="flex w-[700px] min-h-[300px] p-4 md: mt-15 ">
+      <div className="w-1/3 pr-60 ">
+        {serviceTabs.map((tab) => (
           <button
             key={tab.name}
             onClick={() => setActiveTab(tab.name)}
-            className={`block w-full text-left px-4 py-3 rounded-md mb-2 text-md font-medium transition ${
+            className={`block md:w-60 text-left px-4 py-5 rounded-2xl mb-2 text-md font-medium transition ${
               tab.name === activeTab
-                ? "bg-purple-100 text-black"
-                : "text-gray-600 hover:bg-gray-100"
+                ? "bg-gradient-to-b from-[#3b0087] to-[#0b0b17] text-white"
+                : "text-pink-100/80 hover:bg-gradient-to-t from-[#3b0087] to-[#0b0b17] not-hover:border  border-gray-100"
             }`}
           >
             {tab.name}
@@ -335,11 +331,10 @@ const ServiceTabs = () => {
         ))}
       </div>
 
-      {/* Right side content */}
-      <div className="w-2/3 pl-6">
+      <div className="w-4/8 pl-6">
         <ul className="space-y-3">
           {currentTab?.description?.map((point, index) => (
-            <li key={index} className="flex items-start text-gray-800 text-md">
+            <li key={index} className="flex items-start text-pink-100/250 text-md">
               <span className="mt-1 mr-3 text-lg">{point.icon}</span>
               <span>{point.label}</span>
             </li>
@@ -350,56 +345,14 @@ const ServiceTabs = () => {
   );
 };
 const ServiceTabsMobile = () => {
-  const [activeTab, setActiveTab] = useState("App Development");
+  const [activeTab, setActiveTab] = useState(serviceTabs[0].name);
 
-  const tabs = [
-    {
-      name: "App Development",
-      description: [
-        { label: "Android App Development", icon: <FaMobileAlt /> },
-        { label: "iOS App Development", icon: <FaMobileAlt /> },
-        { label: "Web App Development", icon: <FaGlobe /> },
-        { label: "Realtime App Development", icon: <FaCogs /> },
-        { label: "React Native App Development", icon: <FaMobileAlt /> },
-        { label: "FullStack App Development", icon: <FaCogs /> },
-      ],
-    },
-    {
-      name: "Web Dev",
-      description: [
-        { label: "Next.js / React / Vue", icon: <FaGlobe /> },
-        { label: "Responsive Web Design", icon: <FaGlobe /> },
-        { label: "CMS & Custom Development", icon: <FaCogs /> },
-        { label: "API Integration", icon: <FaCogs /> },
-      ],
-    },
-    {
-      name: "SEO",
-      description: [
-        { label: "Technical SEO", icon: <FaCheckCircle /> },
-        { label: "On-page Optimization", icon: <FaCheckCircle /> },
-        { label: "Keyword Strategy", icon: <FaCheckCircle /> },
-        { label: "Performance Tuning", icon: <FaCheckCircle /> },
-      ],
-    },
-    {
-      name: "Cloud",
-      description: [
-        { label: "AWS / GCP / Azure Deployment", icon: <FaCloud /> },
-        { label: "Serverless Architecture", icon: <FaCloud /> },
-        { label: "CI/CD Pipelines", icon: <FaCloud /> },
-        { label: "Cloud Migration", icon: <FaCloud /> },
-      ],
-    },
-  ];
-
-  const currentTab = tabs.find((tab) => tab.name === activeTab);
+  const currentTab = serviceTabs.find((tab) => tab.name === activeTab);
 
   return (
     <div className="flex flex-col gap-4">
-      {/* Tabs */}
       <div className="flex flex-wrap gap-2">
-        {tabs.map((tab) => (
+        {serviceTabs.map((tab) => (
           <button
             key={tab.name}
             onClick={() => setActiveTab(tab.name)}
@@ -414,7 +367,6 @@ const ServiceTabsMobile = () => {
         ))}
       </div>
 
-      {/* Description */}
       <ul className="space-y-2 mt-2">
         {currentTab?.description.map((point, idx) => (
           <li key={idx} className="flex items-center gap-3 text-sm">
@@ -426,3 +378,4 @@ const ServiceTabsMobile = () => {
     </div>
   );
 };
+
