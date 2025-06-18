@@ -5,22 +5,33 @@ import { useEffect, useRef, useState } from "react";
 import {
   FaAndroid,
   FaAppStore,
+  FaAws,
   FaBars,
   FaCheckCircle,
   FaCloud,
   FaCogs,
   FaDesktop,
+  FaDocker,
+  FaGithub,
+  FaGitlab,
   FaGlobe,
+  FaJenkins,
+  FaLinux,
   FaMobileAlt,
+  FaObjectGroup,
+  FaPalette,
+  FaParking,
+  FaPencilRuler,
   FaRegClock,
+  FaRobot,
   FaShopify,
   FaTimes,
   FaTools,
+  FaWaveSquare,
   FaWordpress,
 } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
-import { FaScreenpal } from "react-icons/fa6";
 const serviceTabs = [
   {
     name: "App Development",
@@ -64,11 +75,11 @@ const serviceTabs = [
       },
       {
         label: "Web Development & Design",
-        icon: <FaCogs/>,
+        icon: <FaPalette/>,
       },
       {
         label: "Webflow",
-        icon: <FaCogs />,
+        icon: <FaWaveSquare />,
       },
             {
         label: "Website Design",
@@ -84,15 +95,15 @@ const serviceTabs = [
       },
                 {
         label: "UI/UX",
-        icon: <FaGlobe/>,
+        icon: <FaObjectGroup/>,
       },
       {
         label: "Custom Website Design",
-        icon: <FaCogs/>,
+        icon: <FaPencilRuler/>,
       },
       {
         label: "Product Research",
-        icon: <FaCogs />,
+        icon: <FaParking />,
       },
     ],
   },
@@ -100,20 +111,60 @@ const serviceTabs = [
     name: "Devops",
     description: [
       {
-        label: "Technical SEO",
-        icon: <FaCheckCircle className="text-purple-600" />,
+        label: "  AWS",
+        icon: <FaAws/>,
       },
       {
-        label: "On-page Optimization",
-        icon: <FaCheckCircle className="text-purple-600" />,
+        label: "Azure",
+        icon: <FaCloud />,
       },
       {
-        label: "Keyword Strategy",
-        icon: <FaCheckCircle className="text-purple-600" />,
+        label: "Kubernetes",
+        icon: <FaCheckCircle />,
       },
       {
-        label: "Performance Tuning",
-        icon: <FaCheckCircle className="text-purple-600" />,
+        label: "Jenkins",
+        icon: <FaJenkins/>,
+      },
+      {
+        label: "Gitlab",
+        icon: <FaGitlab/>,
+      },
+      {
+        label: "Github / Github Actions",
+        icon: <FaGithub />,
+      },
+      {
+        label: "Webhooks",
+        icon: <FaRobot/>,
+      },
+      {
+        label: "Docker",
+        icon: <FaDocker />,
+      },
+            {
+        label: "CI/CD",
+        icon: <FaCheckCircle />,
+      },
+      {
+        label: "Linux Administration",
+        icon: <FaLinux/>,
+      },
+      {
+        label: "S3 Services",
+        icon: <FaCheckCircle />,
+      },
+      {
+        label: "Terraform",
+        icon: <FaCheckCircle/>,
+      },
+      {
+        label: "Serverless",
+        icon: <FaCheckCircle />,
+      },
+        {
+        label: "GCP",
+        icon: <FaCheckCircle />,
       },
     ],
   },
@@ -201,7 +252,7 @@ const Header = () => {
             </button>
 {isServicesOpen && (
   <div
-    className="absolute top-8 md:left-30 -translate-x-1/2 bg-[#010314]/80 backdrop-blur-md text-white rounded shadow-xl py-4 px-4 md:w-250 md:h-100 text-sm z-50"
+    className="absolute top-8 md:left-30 -translate-x-1/2 bg-[#010314]/80 backdrop-blur-md text-white rounded shadow-xl py-4 px-4 md:w-250 md:h-auto text-sm z-50"
     onMouseEnter={() => setIsMouseOnPopup(true)}
     onMouseLeave={() => {
       setIsMouseOnPopup(false);
