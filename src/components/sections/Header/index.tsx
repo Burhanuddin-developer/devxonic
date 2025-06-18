@@ -3,65 +3,96 @@
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import {
+  FaAndroid,
+  FaAppStore,
   FaBars,
   FaCheckCircle,
   FaCloud,
   FaCogs,
+  FaDesktop,
   FaGlobe,
   FaMobileAlt,
+  FaRegClock,
+  FaShopify,
   FaTimes,
+  FaTools,
+  FaWordpress,
 } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
+import { FaScreenpal } from "react-icons/fa6";
 const serviceTabs = [
   {
     name: "App Development",
     description: [
       {
         label: "Android App Development",
-        icon: <FaMobileAlt className="text-purple-600" />,
+        icon: <FaAndroid/>,
       },
       {
         label: "iOS App Development",
-        icon: <FaMobileAlt className="text-purple-600" />,
+        icon: <FaAppStore />,
       },
       {
         label: "Web App Development",
-        icon: <FaGlobe className="text-purple-600" />,
+        icon: <FaDesktop/>,
       },
       {
         label: "Realtime App Development",
-        icon: <FaCogs className="text-purple-600" />,
+        icon: <FaRegClock  />,
       },
       {
         label: "React Native App Development",
-        icon: <FaMobileAlt className="text-purple-600" />,
+        icon: <FaMobileAlt />,
       },
       {
         label: "FullStack App Development",
-        icon: <FaCogs className="text-purple-600" />,
+        icon: <FaCogs />,
       },
     ],
   },
   {
-    name: "Web Dev",
-
+    name: "Web Development & Design",
     description: [
       {
-        label: "Next.js / React / Vue",
-        icon: <FaGlobe className="text-purple-600" />,
+        label: "Wordpress",
+        icon: <FaWordpress />,
       },
       {
-        label: "Responsive Web Design",
-        icon: <FaGlobe className="text-purple-600" />,
+        label: "Shopify",
+        icon: <FaShopify/>,
       },
       {
-        label: "CMS & Custom Development",
-        icon: <FaCogs className="text-purple-600" />,
+        label: "Web Development & Design",
+        icon: <FaCogs/>,
       },
       {
-        label: "API Integration",
-        icon: <FaCogs className="text-purple-600" />,
+        label: "Webflow",
+        icon: <FaCogs />,
+      },
+            {
+        label: "Website Design",
+        icon: <FaGlobe/>,
+      },
+      {
+        label: "Full Stack Web Application Development",
+        icon: <FaCogs/>,
+      },
+      {
+        label: "Website Redesign",
+        icon: <FaTools />,
+      },
+                {
+        label: "UI/UX",
+        icon: <FaGlobe/>,
+      },
+      {
+        label: "Custom Website Design",
+        icon: <FaCogs/>,
+      },
+      {
+        label: "Product Research",
+        icon: <FaCogs />,
       },
     ],
   },
@@ -314,7 +345,7 @@ const ServiceTabs = () => {
   const currentTab = serviceTabs.find((tab) => tab.name === activeTab);
 
   return (
-    <div className="flex w-[700px] min-h-[300px] p-4 md: mt-15 ">
+    <div className="flex w-[700px] p-4 md: mt-15 max-h-[350px] overflow-y-50">
       <div className="w-1/3 pr-60 ">
         {serviceTabs.map((tab) => (
           <button
