@@ -20,7 +20,7 @@ const HeroSection = () => {
         <div className="flex flex-col gap-8">
           <div className="rounded-3xl overflow-hidden">
             <Image
-              src='/assests/images/female-developer-checking.avif' // replace with your image path
+              src='/assets/images/using-modern-technologies.jpg' // replace with your image path
               alt="woman using tablet"
               width={500}
               height={300}

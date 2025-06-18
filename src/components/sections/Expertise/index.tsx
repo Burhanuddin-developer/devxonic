@@ -6,6 +6,7 @@ import { FaSearch, FaCogs, FaRocket } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import CountUp from 'react-countup';
 import { useInView } from 'react-intersection-observer';
+import StatCounter from '@/components/base/StatCounter';
 
 const steps = [
   {
@@ -113,23 +114,7 @@ const Expertise = () => {
 
       </div>
 
-      {/* Stats Section */}
-      <motion.div
-        ref={ref}
-        className="bg-[#0b0b17] border border-white rounded-3xl w-full md:max-w-6xl py-16 px-8 md:mx-30 flex flex-col md:flex-row justify-around items-center divide-y md:divide-y-0 md:divide-x divide-white/80 space-y-10 md:space-y-0"
-        initial={{ opacity: 0, y: 50 }}
-        animate={inView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.8 }}
-      >
-        {stats.map((stat, index) => (
-          <div key={index} className="text-center px-8 space-y-3">
-            <div className="text-6xl md:text-6xl font-semibold mb-2 text-white">
-              {inView && <CountUp end={stat.value} duration={2} />} {stat.suffix}
-            </div>
-            <div className="text-lg md:text-xl text-white font-medium">{stat.label}</div>
-          </div>
-        ))}
-      </motion.div>
+      <StatCounter stats={stats} />
 
     </div>
   );

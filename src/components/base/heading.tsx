@@ -15,6 +15,8 @@ export function Heading({
   className,
 }: HeadingProps) {
   return (
+    <>
+    <section className="min-h-[60vh] flex flex-col justify-center items-center text-center bg-gradient-to-t from-[#3b0087] via-[#0b0b17]  text-white px-4">
     <div className={className}>
       <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">{title}</h2>
       {description && (
@@ -22,5 +24,7 @@ export function Heading({
       )}
       {children}
     </div>
+     </section>
+     </>
   );
 }
