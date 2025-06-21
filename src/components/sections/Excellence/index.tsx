@@ -39,11 +39,11 @@ const expertiseItems = [
 
 export default function ExcellenceSection() {
   return (
-    <div className="min-h-screen bg-gradient-to-t from-[#3b0087] via-[#0b0b17] to-[#0b0b17] text-white px-4 sm:px-6 lg:px-20 py-20">
-      <div className="max-w-7xl mx-auto space-y-16">
+    <div className="min-h-screen bg-gradient-to-t from-[#3b0087] via-[#0b0b17] to-[#0b0b17] text-white px-4 sm:px-6 lg:px-20 py-20 page-section">
+      <div className="max-w-7xl mx-auto space-y-16 selection-container">
         {/* Heading */}
         <motion.div
-          className="space-y-6 text-center"
+          className="space-y-6"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}

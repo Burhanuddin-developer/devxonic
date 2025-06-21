@@ -5,9 +5,9 @@ import { FaPhoneAlt, FaEnvelope, FaFacebookF, FaTwitter, FaYoutube, FaLinkedinIn
 
 export default function ContactSection() {
   return (
-    <div className="bg-[#080717] text-white px-8 py-20 flex flex-col lg:flex-row gap-60  items-center min-h-screen">
+    <div className="bg-[#080717] text-white  flex flex-col lg:flex-row gap-40   min-h-screen page-section ">
       {/* Left Column */}
-      <div className="max-w-md w-full">
+      <div className=" section-container">
         <h2 className="text-4xl font-light">
           Get in <span className="font-semibold">touch</span>
         </h2>
@@ -48,8 +48,8 @@ export default function ContactSection() {
       </div>
 
       {/* Right Form Box */}
-      <div className="w-full max-w-xl">
-        <div className="bg-gradient-to-t from-[#3b0087] via-[#0b0b17] p-[2px] rounded-3xl border-t-1 border-gray-500 md:h-140 shadow-lg">
+      <div className="w-full max-w-xl section-container">
+        <div className="bg-gradient-to-t from-[#3b0087] via-[#0b0b17] p-[2px] rounded-3xl border-t-1 border-gray-500 md:h-auto shadow-lg">
           <form className=" p-15 rounded-2xl space-y-5 md:mt-10">
             <div className="flex flex-col sm:flex-row gap-4">
               <input type="text" placeholder="First Name" className="w-full px-4 py-2 rounded-full bg-transparent border border-gray-500 focus:outline-none text-sm" />

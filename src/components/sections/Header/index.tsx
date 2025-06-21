@@ -38,7 +38,7 @@ const serviceTabs = [
     description: [
       {
         label: "Android App Development",
-        icon: <FaAndroid/>,
+        icon: <FaAndroid />,
       },
       {
         label: "iOS App Development",
@@ -46,11 +46,11 @@ const serviceTabs = [
       },
       {
         label: "Web App Development",
-        icon: <FaDesktop/>,
+        icon: <FaDesktop />,
       },
       {
         label: "Realtime App Development",
-        icon: <FaRegClock  />,
+        icon: <FaRegClock />,
       },
       {
         label: "React Native App Development",
@@ -71,35 +71,35 @@ const serviceTabs = [
       },
       {
         label: "Shopify",
-        icon: <FaShopify/>,
+        icon: <FaShopify />,
       },
       {
         label: "Web Development & Design",
-        icon: <FaPalette/>,
+        icon: <FaPalette />,
       },
       {
         label: "Webflow",
         icon: <FaWaveSquare />,
       },
-            {
+      {
         label: "Website Design",
-        icon: <FaGlobe/>,
+        icon: <FaGlobe />,
       },
       {
         label: "Full Stack Web Application Development",
-        icon: <FaCogs/>,
+        icon: <FaCogs />,
       },
       {
         label: "Website Redesign",
         icon: <FaTools />,
       },
-                {
+      {
         label: "UI/UX",
-        icon: <FaObjectGroup/>,
+        icon: <FaObjectGroup />,
       },
       {
         label: "Custom Website Design",
-        icon: <FaPencilRuler/>,
+        icon: <FaPencilRuler />,
       },
       {
         label: "Product Research",
@@ -112,7 +112,7 @@ const serviceTabs = [
     description: [
       {
         label: "  AWS",
-        icon: <FaAws/>,
+        icon: <FaAws />,
       },
       {
         label: "Azure",
@@ -124,11 +124,11 @@ const serviceTabs = [
       },
       {
         label: "Jenkins",
-        icon: <FaJenkins/>,
+        icon: <FaJenkins />,
       },
       {
         label: "Gitlab",
-        icon: <FaGitlab/>,
+        icon: <FaGitlab />,
       },
       {
         label: "Github / Github Actions",
@@ -136,19 +136,19 @@ const serviceTabs = [
       },
       {
         label: "Webhooks",
-        icon: <FaRobot/>,
+        icon: <FaRobot />,
       },
       {
         label: "Docker",
         icon: <FaDocker />,
       },
-            {
+      {
         label: "CI/CD",
         icon: <FaCheckCircle />,
       },
       {
         label: "Linux Administration",
-        icon: <FaLinux/>,
+        icon: <FaLinux />,
       },
       {
         label: "S3 Services",
@@ -156,13 +156,13 @@ const serviceTabs = [
       },
       {
         label: "Terraform",
-        icon: <FaCheckCircle/>,
+        icon: <FaCheckCircle />,
       },
       {
         label: "Serverless",
         icon: <FaCheckCircle />,
       },
-        {
+      {
         label: "GCP",
         icon: <FaCheckCircle />,
       },
@@ -250,20 +250,20 @@ const Header = () => {
             <button aria-haspopup="true" aria-expanded={isServicesOpen}>
               Services
             </button>
-{isServicesOpen && (
-  <div
-    className="absolute top-8 md:left-30 -translate-x-1/2 bg-[#010314]/80 backdrop-blur-md text-white rounded shadow-xl py-4 px-4 md:w-250 md:h-auto text-sm z-50"
-    onMouseEnter={() => setIsMouseOnPopup(true)}
-    onMouseLeave={() => {
-      setIsMouseOnPopup(false);
-      popupCloseTimeout.current = setTimeout(() => {
-        setIsServicesOpen(false);
-      }, 300);
-    }}
-  >
-    <ServiceTabs />
-  </div>
-)}
+            {isServicesOpen && (
+              <div
+                className="absolute top-8 md:left-30 -translate-x-1/2 bg-[#010314]/80 backdrop-blur-md text-white rounded shadow-xl py-4 px-4 md:w-250 md:h-auto text-sm z-50"
+                onMouseEnter={() => setIsMouseOnPopup(true)}
+                onMouseLeave={() => {
+                  setIsMouseOnPopup(false);
+                  popupCloseTimeout.current = setTimeout(() => {
+                    setIsServicesOpen(false);
+                  }, 300);
+                }}
+              >
+                <ServiceTabs />
+              </div>
+            )}
 
           </div>
 
@@ -285,7 +285,7 @@ const Header = () => {
             </button>
             {isProjectsOpen && (
               <div
-                className="absolute top-8 left-0 bg-white text-black rounded shadow-lg py-2 w-48 text-sm"
+                className="absolute top-8 left-0 bg-white/80 backdrop-blur-md text-black rounded shadow-lg py-2 w-48 text-md "
                 onMouseEnter={() => setIsMouseOnPopup(true)}
                 onMouseLeave={() => {
                   setIsMouseOnPopup(false);
@@ -294,31 +294,28 @@ const Header = () => {
                   }, 300);
                 }}
               >
-                <a
-                  href="/projects/corporate"
-                  className="block px-4 py-2 hover:bg-purple-100"
-                >
-                  Corporate
-                </a>
-                <a
-                  href="/projects/startups"
-                  className="block px-4 py-2 hover:bg-purple-100"
-                >
-                  Startups
-                </a>
-                <a
-                  href="/projects/ecommerce"
-                  className="block px-4 py-2 hover:bg-purple-100"
-                >
-                  E-Commerce
-                </a>
+                <button onClick={() => router.push("/Page/MobileApplication")} className="block px-4 py-4 hover:bg-purple-100">
+                  Mobile Application
+                </button>
+                <button onClick={() => router.push("/Page/WebApps")} className="block px-4 py-4 hover:bg-purple-100">
+                  Web Apps
+                </button>
+                <button onClick={() => router.push("/Page/Wordpress")} className="block px-4 py-4 hover:bg-purple-100">
+                  Wordpress
+                </button>
+                <button onClick={() => router.push("/Page/Shopify")} className="block px-4 py-4 hover:bg-purple-100">
+                  Shopify
+                </button>
+                <button onClick={() => router.push("/Page/UiProjects")} className="block px-4 py-4 hover:bg-purple-100">
+                  UI Projects
+                </button>
               </div>
             )}
           </div>
 
-          <button onClick={() => router.push("/About")}>About</button>
-          <button onClick={() => router.push("/Blog")}>Blog</button>
-           <button onClick={() => router.push("/Contact")}>Contact</button>
+          <button onClick={() => router.push("/Page/About")}>About</button>
+          <button onClick={() => router.push("/Page/Blog")}>Blog</button>
+          <button onClick={() => router.push("/Page/Contact")}>Contact</button>
         </nav>
 
         <a
@@ -335,16 +332,16 @@ const Header = () => {
           <a href="/" onClick={closeMobileMenu}>
             Home
           </a>
-<div>
-  <button onClick={() => setIsServicesOpen(!isServicesOpen)}>
-    Services
-  </button>
-  {isServicesOpen && (
-    <div className="mt-4 border-t border-gray-700 pt-4">
-      <ServiceTabsMobile />
-    </div>
-  )}
-</div>
+          <div>
+            <button onClick={() => setIsServicesOpen(!isServicesOpen)}>
+              Services
+            </button>
+            {isServicesOpen && (
+              <div className="mt-4 border-t border-gray-700 pt-4">
+                <ServiceTabsMobile />
+              </div>
+            )}
+          </div>
 
           <div>
             <button onClick={() => setIsProjectsOpen(!isProjectsOpen)}>
@@ -396,27 +393,28 @@ const ServiceTabs = () => {
   const currentTab = serviceTabs.find((tab) => tab.name === activeTab);
 
   return (
-    <div className="flex w-[700px] p-4 md: mt-15 max-h-[350px] overflow-y-50">
-      <div className="w-1/3 pr-60 ">
+    <div className="flex w-auto p-4 max-h-[400px]">
+      {/* Left Tabs */}
+      <div className="w-1/4  overflow-y-auto">
         {serviceTabs.map((tab) => (
           <button
             key={tab.name}
             onClick={() => setActiveTab(tab.name)}
-            className={`block md:w-60 text-left px-4 py-5 rounded-2xl mb-2 text-md font-medium transition ${
-              tab.name === activeTab
-                ? "bg-gradient-to-b from-[#3b0087] to-[#0b0b17] text-white"
-                : "text-pink-100/80 hover:bg-gradient-to-t from-[#3b0087] to-[#0b0b17] not-hover:border  border-gray-100"
-            }`}
+            className={`block w-full text-left px-4 py-5 rounded-2xl mb-2 text-sm font-medium transition ${tab.name === activeTab
+                ? "bg-gradient-to-b from-[#3b0087] to-[#0b0b17] text-white "
+                : "text-pink-100/80  border border-gray-100 hover:bg-gradient-to-t from-[#3b0087] to-[#0b0b17] "
+              }`}
           >
             {tab.name}
           </button>
         ))}
       </div>
 
-      <div className="w-4/8 pl-6">
+      {/* Right Content */}
+      <div className="w-2/3 pl-4 overflow-y-auto h-auto ">
         <ul className="space-y-3">
           {currentTab?.description?.map((point, index) => (
-            <li key={index} className="flex items-start text-pink-100/250 text-md">
+            <li key={index} className="flex items-start text-pink-100/250 text-sm">
               <span className="mt-1 mr-3 text-lg">{point.icon}</span>
               <span>{point.label}</span>
             </li>
@@ -426,6 +424,7 @@ const ServiceTabs = () => {
     </div>
   );
 };
+
 const ServiceTabsMobile = () => {
   const [activeTab, setActiveTab] = useState(serviceTabs[0].name);
 
@@ -438,11 +437,10 @@ const ServiceTabsMobile = () => {
           <button
             key={tab.name}
             onClick={() => setActiveTab(tab.name)}
-            className={`px-3 py-1.5 rounded-full text-sm font-semibold ${
-              tab.name === activeTab
-                ? "bg-white text-black"
-                : "bg-gray-800 text-gray-300"
-            }`}
+            className={`px-3 py-1.5 rounded-full text-sm font-semibold ${tab.name === activeTab
+              ? "bg-white text-black"
+              : "bg-gray-800 text-gray-300"
+              }`}
           >
             {tab.name}
           </button>

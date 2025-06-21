@@ -5,12 +5,12 @@ import Image from "next/image";
 
 export default function Innovation() {
   return (
-    <div className="bg-[#0b0b17] text-white py-20 px-6 lg:px-24">
-      <div className="flex flex-col-reverse md:flex-row gap-10 items-stretch">
+    <div className="bg-[#0b0b17] text-white py-20 px-6 lg:px-24 page-section">
+      <div className="flex flex-col-reverse md:flex-row gap-10 items-stretch section-container">
         {/* Right side (Text content) — shows first on small, right on large */}
         <div className="order-3 md:order-2 p-4 sm:p-8 rounded-3xl flex flex-col justify-between flex-1">
           <div className="space-y-6">
-            <h2 className="text-2xl sm:text-4xl font-semibold leading-tight text-center md:text-left">
+            <h2 className="text-2xl sm:text-4xl font-semibold leading-tight md:text-left">
               Empowering{" "}
               <span className="text-white font-bold">Innovation</span>,<br />
               Building the <span className="text-white font-bold">Future</span>
@@ -60,7 +60,7 @@ export default function Innovation() {
               </div>
 
               {/* Image below icons */}
-              <div className="bg-gray-300 sm:w-80  mx-auto sm:mx-0 rounded-xl overflow-hidden w-100 h-60 sm:h-54">
+              <div className="bg-gray-300 sm:w-80  mx-auto sm:mx-0 rounded-xl overflow-hidden w-full h-60 sm:h-54">
                 <Image
                   src="/assets/images/using-modern-technologies.jpg"
                   alt="Woman"

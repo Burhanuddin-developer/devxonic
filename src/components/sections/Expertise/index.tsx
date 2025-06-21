@@ -45,9 +45,9 @@ const Expertise = () => {
   });
 
   return (
-    <div className="min-h-screen bg-[#0b0b17] text-white px-4 py-20 space-y-16">
+    <div className="min-h-screen bg-[#0b0b17] text-white px-4 py-20 space-y-16 page-section">
       {/* Top Section */}
-      <div className="flex flex-col lg:flex-row items-center justify-between max-w-7xl mx-auto gap-12">
+      <div className="flex flex-col lg:flex-row items-center justify-between max-w-7xl mx-auto gap-12 selection-container" ref={ref}>
         {/* Left - Image */}
         <motion.div
           className="w-full lg:w-1/2 flex justify-center"
@@ -89,7 +89,7 @@ const Expertise = () => {
             {steps.map((step, index) => (
               <motion.div
                 key={step.id}
-                className="flex flex-col sm:flex-row sm:items-start items-center gap-4"
+                className="flex flex-col sm:flex-row items-center gap-4"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}

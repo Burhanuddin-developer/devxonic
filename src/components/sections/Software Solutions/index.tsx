@@ -5,10 +5,10 @@ import React from 'react';
 import { motion } from 'framer-motion';
 const HeroSection = () => {
   return (
-    <div className="min-h-screen bg-[#0b0b17] flex items-center justify-center p-20">
+    <div className="min-h-screen bg-[#0b0b17] flex items-center justify-center p-20 page-section">
       <div className="max-w-7xl w-full grid md:grid-cols-2 gap-12 items-center">
          <motion.div
-        className="text-center mb-12"
+        className="text-center mb-12 selection-container"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 2, ease: "easeOut" }}
@@ -61,7 +61,7 @@ const HeroSection = () => {
     </p>
   </div>
 
-  <button className="mt-10 bg-white text-black font-medium py-3 px-8 rounded-full shadow-lg hover:scale-105 transition">
+  <button className="mt-10 bg-white text-black font-medium py-3 px-8  rounded-full shadow-lg hover:scale-105 transition">
     Learn More
   </button>
 </div>

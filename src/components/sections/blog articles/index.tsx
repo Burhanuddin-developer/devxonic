@@ -22,9 +22,9 @@ const blogPosts = [
 
 const BlogSection = () => {
   return (
-    <div className="min-h-[75vh] bg-[#0b0b17] text-white px-4 sm:px-8 py-12">
+    <div className="min-h-[75vh] bg-[#0b0b17] text-white px-4 sm:px-8 py-12 page-section">
       {/* Heading */}
-      <div className="text-center mb-16">
+      <div className="text-center mb-16 selection-container">
         <h2 className="text-3xl sm:text-3xl md:text-4xl font-light">
           Latest blog <span className="font-semibold">articles about</span> <br />
           <span className="font-bold">technology trends</span>

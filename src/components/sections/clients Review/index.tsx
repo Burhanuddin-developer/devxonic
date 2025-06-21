@@ -20,8 +20,8 @@ const testimonials = [
 
 const ReviewsSection = () => {
     return (
-        <div className="min-h-screen bg-[#0b0b17] text-white px-4 md:px-30 py-16 md:py-24">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-light mb-8">
+        <div className="min-h-screen bg-[#0b0b17] text-white px-4 md:px-30 py-16 md:py-24 page-section">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-light mb-8 selection-container">
                 Reviews from <span className="font-semibold">our clients</span>
             </h2>
 

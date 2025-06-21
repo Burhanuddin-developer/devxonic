@@ -102,10 +102,10 @@ export default function TrustedClients() {
   if (!isMounted) return null;
 
   return (
-    <div className="bg-[#0b0b17] py-16 px-4 text-white overflow-hidden">
+    <div className="bg-[#0b0b17] py-16 px-4 text-white overflow-hidden page-section">
       {/* Title with fade-in on scroll */}
       <motion.div
-        className="text-center mb-12"
+        className="text-center mb-12 selection-container"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
@@ -127,7 +127,7 @@ export default function TrustedClients() {
       >
         <div
           ref={sliderRef}
-          className="flex w-full"
+          className="flex w-full gap-2"
           style={{ width: `${(60 / visibleSlides) * slides.length}%` }}
           onTransitionEnd={handleTransitionEnd}
         >
@@ -148,7 +148,7 @@ export default function TrustedClients() {
                   alt={client.name}
                   width={150}
                   height={80}
-                  className="w-20 sm:w-40 md:w-28 lg:w-32 object-contain mb-4"
+                  className="sm:w-40 md:w-28 lg:w-32 object-contain mb-4"
                 />
               </motion.div>
             </div>

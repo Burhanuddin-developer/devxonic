@@ -3,8 +3,8 @@
 export default function Main() {
   return (
     <>
-      <main className="relative min-h-screen bg-gradient-to-t from-[#3b0087] via-[#0b0b17]  flex items-center justify-center px-6 ">
-        <div className="max-w-6xl w-full grid md:grid-cols-2 gap-10 items-center">
+      <main className="relative min-h-screen bg-gradient-to-t from-[#3b0087] via-[#0b0b17]  flex justify-center page-section ">
+        <div className="max-w-6xl w-full grid md:grid-cols-2 gap-10 items-center section-container">
           <div className='mb-30'>
             <h1 className="text-5xl md:text-6xl font-bold text-white leading-snug mb-6">
               Your Partner in <br />
@@ -24,7 +24,7 @@ export default function Main() {
               </button>
             </div>
           </div>
-          <div className="relative w-full mb-40">
+          <div className="relative w-full mb-30">
             <img
               src="https://testweb.devxonic.com/wp-content/uploads/2024/08/Asset-2.png.webp"
               alt="3D Mesh"

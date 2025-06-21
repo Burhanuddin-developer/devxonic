@@ -40,14 +40,14 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section className="bg-[#0b0b17] text-white py-20 px-6 md:px-20">
+    <section className="bg-[#0b0b17] text-white py-20 px-6 md:px-20 page-section">
       {/* Title with fade-in */}
       <motion.div
         initial={{ opacity: 0, y: -50 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8, ease: 'easeOut' }}
-        className="text-center mb-16"
+        className="text-center mb-16 selection-container"
       >
         <h2 className="text-4xl font-light">
           Our <span className="font-bold">Projects</span>

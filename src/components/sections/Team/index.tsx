@@ -26,8 +26,8 @@ const teamMembers = [
 
 export default function TeamSection() {
   return (
-    <section className=" text-white py-16 px-4 bg-gradient-to-t from-[#3b0087] via-[#0B0B17] to-[#0B0B17]">
-      <div className="max-w-7xl mx-auto ">
+    <section className=" text-white py-16 px-4 bg-gradient-to-t from-[#3b0087] via-[#0B0B17] to-[#0B0B17] page-section">
+      <div className="max-w-7xl mx-auto section-container">
         <h2 className="text-4xl md:text-5xl font-light mb-12">
           Meet the <span className="text-white font-medium">professional cyber</span> <br/>team
         </h2>
@@ -36,18 +36,18 @@ export default function TeamSection() {
           {teamMembers.map((member, idx) => (
             <div key={idx} className="flex flex-col items-center">
               {/* Image Card */}
-              <div className="w-100 rounded-2xl overflow-hidden ">
+              <div className="w-full rounded-2xl overflow-hidden ">
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="w-full h-[500px] object-cover bg-gradient-to-b from-purple-800 to-[#0B0B17]"
+                  className="w-full h-[400px] object-cover bg-gradient-to-b from-purple-800 to-[#0B0B17]"
                 />
               </div>
 
               {/* Name + Icons */}
-              <div className="flex items-center justify-center gap-2 mt-4 flex-wrap">
+              <div className="flex items-center  gap-2 mt-4 flex-wrap">
                 <h3 className="text-xl font-semibold">{member.name}</h3>
-                <div className="flex gap-2 text-2xl text-gray-300 md:ml-30">
+                <div className="flex gap-2 text-2xl text-gray-300 md:ml-10">
                   {member.icons.map((icon, iconIndex) => (
                     <span key={iconIndex} className="hover:text-white transition ">{icon}</span>
                   ))}
