@@ -38,7 +38,7 @@ const BlogPost = () => {
     category:'Web Development',
     title: 'The Biggest Challenges in IT and How to Overcome Them',
     description: 'The Biggest Challenges in IT and How to Overcome Them [iawp_view_counter] Introduction In the ever-evolving…',
-    onClick: () => router.push('./DevelopmentLanguage'), 
+    onClick: () => router.push('./Blog/ChallengesIt'), 
   },
   {
     id: 5,

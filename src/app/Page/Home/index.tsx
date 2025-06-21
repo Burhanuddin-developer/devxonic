@@ -22,7 +22,6 @@ export default function Home() {
      <ExcellenceSection/>
    <Expertise/>
    <ReviewsSection/>
-   <BlogSection/>
    <Vision/>
    <Footer/>
      </>
