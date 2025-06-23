@@ -183,7 +183,7 @@ export default function InterfaceDesign() {
             </div>
           </div>
         </div>
-        <div className="lg:col-span-2 space-y-8">
+        <div className="lg:col-span-4 space-y-8">
           <h1 className="text-3xl md:text-4xl font-bold">
             <span className="text-gray-400">User</span> Research
           </h1>
@@ -281,7 +281,7 @@ export default function InterfaceDesign() {
             </p>
           </section>
         </div>
-        <div className="lg:col-span-2 space-y-8">
+        <div className="lg:col-span-4 space-y-8">
           <h1 className="text-3xl md:text-4xl font-bold">
             <span className="text-gray-400">Wireframing</span> and
             <span className="text-white"> Prototyping</span>
@@ -377,7 +377,6 @@ export default function InterfaceDesign() {
             </p>
           </section>
         </div>
-      
       </div>
     </div>
   );
