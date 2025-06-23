@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { JSX, useEffect, useRef, useState } from "react";
 import {
   FaAndroid,
   FaAppStore,
@@ -32,33 +32,50 @@ import {
 } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
-const serviceTabs = [
+type ServiceTabDescription = {
+  label: string;
+  icon: JSX.Element;
+  href?: string;
+};
+
+type ServiceTab = {
+  name: string;
+  description: ServiceTabDescription[];
+};
+
+const serviceTabs: ServiceTab[] = [
   {
     name: "App Development",
     description: [
       {
         label: "Android App Development",
         icon: <FaAndroid />,
+        href:"/Page/AppDevelopment/Android",
       },
       {
         label: "iOS App Development",
         icon: <FaAppStore />,
+         href:"/Page/AppDevelopment/Ios",
       },
       {
         label: "Web App Development",
         icon: <FaDesktop />,
+         href:"/Page/WebApps",
       },
       {
         label: "Realtime App Development",
         icon: <FaRegClock />,
+          href:"/Page/AppDevelopment/Realtime",
       },
       {
         label: "React Native App Development",
         icon: <FaMobileAlt />,
+         href:"/Page/MobileApplication",
       },
       {
         label: "FullStack App Development",
         icon: <FaCogs />,
+        href:"/Page/AppDevelopment/FullStack"
       },
     ],
   },
@@ -414,10 +431,10 @@ const ServiceTabs = () => {
       <div className="w-2/3 pl-4 overflow-y-auto h-auto ">
         <ul className="space-y-3">
           {currentTab?.description?.map((point, index) => (
-            <li key={index} className="flex items-start text-pink-100/250 text-sm">
-              <span className="mt-1 mr-3 text-lg">{point.icon}</span>
+            <Link key={index} href={point.href ?? "#"} className="flex items-start text-pink-100/250 text-sm">
+                 <span className="mt-1 mr-3 text-lg">{point.icon}</span>
               <span>{point.label}</span>
-            </li>
+              </Link>
           ))}
         </ul>
       </div>

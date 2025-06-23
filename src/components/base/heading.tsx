@@ -19,9 +19,9 @@ export function Heading({
   style = {},
 }: HeadingProps) {
   return (
-    <section className="page-section bg-gradient-to-t from-[#3b0087] via-[#0b0b17] text-white text-center">
+    <section className="page-section h-100  bg-gradient-to-t from-[#3b0087] via-[#0b0b17] text-white text-center">
       <div className={`section-container ${className || ''}`} style={style}>
-        <h2 className="section-heading">{title}</h2>
+        <h2 className="section-heading md:mt-12">{title}</h2>
         {description && (
           <p className="section-subtext">{description}</p>
         )}

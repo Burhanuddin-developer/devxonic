@@ -14,7 +14,7 @@ const BlogPost = () => {
     category:'Mobile Development',
     title: 'Mastering Multilingual Apps: Next.js Internationalization with Next-Intl',
     description: 'Mastering Multilingual Apps: Next.js Internationalization with Next-Intl Introduction to Next.js Internationalization with Next-Intl In a…',
-    onClick: () => router.push('./DevelopmentLanguage'), 
+    onClick: () => router.push('./Blog/Internationalization'), 
   },
   {
     id: 2,
@@ -22,7 +22,7 @@ const BlogPost = () => {
     category:'Mobile Development',
     title: 'The Cost of Mobile Development in 2024: A Comprehensive Overview',
     description: 'The Cost of Mobile Development in 2024: A Comprehensive Overview [iawp_view_counter] Introduction to Mobile Development…',
-    onClick: () => router.push('./DevelopmentLanguage'), 
+    onClick: () => router.push('./Blog/MobileDevelopment'), 
   },
   {
     id: 3,
@@ -30,7 +30,7 @@ const BlogPost = () => {
     category:'Web Development',
     title: 'Handling Authentication and Authorization in Node.js',
     description: 'Handling Authentication and Authorization in Node.js [iawp_view_counter] Introduction In today’s world of web and mobile…',
-   onClick: () => router.push('./DevelopmentLanguage'), 
+   onClick: () => router.push('./Blog/HandlingAuthentication'), 
   },
   {
     id: 4,

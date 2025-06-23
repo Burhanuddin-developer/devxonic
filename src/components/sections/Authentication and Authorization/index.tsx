@@ -1,4 +1,36 @@
+'use client';
+
+import React from 'react';
+import Image from 'next/image';
+import Slider from 'react-slick';
 export default function AuthenticationandAuthorization() {
+  const settings = {
+    infinite: true,
+    speed: 500,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 4000,
+    arrows: false,
+  };
+  const sliderImages = [
+    {
+      src: 'https://testweb.devxonic.com/wp-content/uploads/2024/08/female-informatic-engineer-working-inside-server-r-A7JSN9A-1024x683.jpg.webp',
+      alt: 'Team working on performance',
+    },
+    {
+      src: 'https://testweb.devxonic.com/wp-content/uploads/2024/08/modern-technologies-Z8ZQBFL-1024x683.jpg.webp',
+      alt: 'Data center performance testing',
+    },
+    {
+      src: 'https://testweb.devxonic.com/wp-content/uploads/2024/08/programmers-cooperating-at-information-technology-2AGVCUN-1024x683.jpg.webp',
+      alt: 'Team working on performance',
+    },
+    {
+      src: 'https://testweb.devxonic.com/wp-content/uploads/2024/08/employees-working-collaboration-and-strategy-on-c-Y68B8FQ-1024x683.jpg.webp',
+      alt: 'Data center performance testing',
+    },
+  ];
   return (
     <div className="min-h-screen bg-[#0b0b17] text-white py-12 md:px-20 page-section">
       <div className="max-w-5xl mx-auto section-container">
@@ -217,26 +249,196 @@ app.post('/login', (req, res) => {
             <h3 className="text-2xl bold">Example Using jsonwebtoken:  </h3>
             <pre className=" p-4 rounded-md overflow-auto text-sm">
               <code>
-                {`const express = require('express');
-const session = require('express-session');
-
+                {`const jwt = require('jsonwebtoken');
+const express = require('express');
 const app = express();
 
-app.use(session({
-  secret: 'your-secret-key',
-  resave: false,
-  saveUninitialized: true,
-  cookie: { secure: false }  // Set to true in production
-}));
+// Secret key
+const SECRET_KEY = 'your-secret-key';
 
 app.post('/login', (req, res) => {
-  // Authenticate user here
-  req.session.userId = user.id; // Save userId in session
-  res.send('Logged in!');
-}); `}
+  const user = authenticateUser(req.body);  // Custom function to verify credentials
+  
+  if (user) {
+    const token = jwt.sign({ userId: user.id }, SECRET_KEY, { expiresIn: '1h' });
+    res.json({ token });
+  } else {
+    res.status(401).send('Invalid credentials');
+  }
+});
+
+app.get('/protected', (req, res) => {
+  const token = req.headers['authorization'];
+
+  if (token) {
+    jwt.verify(token, SECRET_KEY, (err, decoded) => {
+      if (err) {
+        return res.status(403).send('Invalid token');
+      }
+      req.userId = decoded.userId;
+      res.send('Protected content');
+    });
+  } else {
+    res.status(401).send('No token provided');
+  }
+});  `}
               </code>
             </pre>
           </section>
+        </div>
+        <div className="space-y-8">
+          <section>
+            <h2 className="text-xl font-semibold mb-2">
+              3. OAuth and Social Logins
+            </h2>
+            <p className="text-gray-300">
+              OAuth allows users to authenticate through third-party services like Google, Facebook, or GitHub without needing to create new credentials for your application. This is commonly referred to as “social login.”
+              <br />
+              Using OAuth 2.0, you can redirect users to the provider’s login page. Once authenticated, the provider sends a token that your server can use to identify the user and grant access.
+            </p>
+          </section>
+
+          <section>
+            <h5 className="text-md font-semibold">
+              Steps for OAuth 2.0:
+            </h5>
+            <ol className="list-decimal pl-6 text-gray-300 space-y-1">
+              <li>The user clicks on a “Login with Google” button (for example).</li>
+              <li>The user is redirected to the Google login page.</li>
+              <li>
+                After logging in, Google sends a token back to your server.
+              </li>
+              <li>
+                Your server uses the token to request user information and authenticate them.
+              </li>
+            </ol>
+          </section>
+
+          <section>
+            <h3 className="text-md font-semibold">Pros:</h3>
+            <ul className="list-disc pl-6 space-y-1">
+              <li>
+                Simplifies the login process for users.
+              </li>
+              <li>No need to manage sensitive information like passwords.</li>
+              <li>
+                Reduces friction, encouraging higher user registration rates.
+              </li>
+            </ul>
+          </section>
+
+          <section>
+            <h3 className="text-md font-semibold">Cons:</h3>
+            <ul className="list-disc pl-6 space-y-1">
+              <li>
+                Reliant on third-party services.
+              </li>
+              <li>Requires integration with OAuth providers and proper handling of tokens.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h3 className="text-2xl bold">Example Using passport.js with Google OAuth:</h3>
+            <pre className=" p-4 rounded-md overflow-auto text-sm">
+              <code>
+                {`const passport = require('passport');
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
+
+passport.use(new GoogleStrategy({
+  clientID: 'GOOGLE_CLIENT_ID',
+  clientSecret: 'GOOGLE_CLIENT_SECRET',
+  callbackURL: '/auth/google/callback'
+}, (token, tokenSecret, profile, done) => {
+  // Save user information here
+  return done(null, profile);
+}));
+
+app.get('/auth/google', passport.authenticate('google', { scope: ['profile'] }));
+
+app.get('/auth/google/callback', 
+  passport.authenticate('google', { failureRedirect: '/' }),
+  (req, res) => {
+    res.redirect('/dashboard');
+  }
+); `}
+              </code>
+            </pre>
+          </section>
+        </div>
+        <div className="space-y-8">
+          <section>
+            <h2 className="text-xl font-semibold mb-2">
+              Role-Based Authorization
+            </h2>
+            <p className="text-gray-300">
+              Once users are authenticated, you need to manage what they can and cannot do based on their roles. For example, you might have roles like admin, editor, and user, each with different access levels.
+            </p>
+            <h3 className="text-2xl bold">Example of Role-Based Authorization:</h3>
+            <pre className=" p-4 rounded-md overflow-auto text-sm">
+              <code>
+                {`function authorize(roles = []) {
+  return (req, res, next) => {
+    const user = req.user;  // Assume user info is added to req after authentication
+    
+    if (roles.length && !roles.includes(user.role)) {
+      return res.status(403).json({ message: 'Access denied' });
+    }
+    next();
+  };
+}
+
+app.get('/admin', authorize(['admin']), (req, res) => {
+  res.send('Admin content');
+});`}
+              </code>
+            </pre>
+          </section>
+          <section>
+            <h5 className="text-md font-semibold">
+              Best Practices for Authentication and Authorization in Node.js
+            </h5>
+            <ol className="list-decimal pl-6 text-gray-300 space-y-1">
+              <li> <strong>Use HTTPS:</strong>Always secure your Node.js application with SSL/TLS to protect user data.</li>
+              <li><strong>Encrypt Sensitive Data:</strong>Never store passwords in plaintext. Use hashing algorithms like bcrypt for password storage.</li>
+              <li>
+                <strong>Session Security:</strong>If using sessions, implement proper session management practices, such as limiting session lifetimes and regenerating session IDs on login.
+              </li>
+              <li>
+                <strong>Use Security Libraries:</strong> Libraries like Helmet and csurf help protect against common web vulnerabilities like CSRF and XSS.
+              </li>
+              <li>
+                <strong>Use Security Libraries:</strong> Libraries like Helmet and csurf help protect against common web vulnerabilities like CSRF and XSS.
+              </li>
+            </ol>
+            <Slider {...settings}>
+              {sliderImages.map((image, index) => (
+                <div key={index} className="px-5 border-none shadow-none outline-none">
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    width={600}
+                    height={400}
+                    className="object-cover w-full h-full rounded-2xl border-none shadow-none outline-none"
+                  />
+                </div>
+
+              ))}
+            </Slider>
+          </section>
+          <section>
+            <h2 className="text-2xl font-semibold mb-6">Conclusion</h2>
+            <p className="text-gray-300 mb-8">
+              Handling authentication and authorization in Node.js is a fundamental aspect of securing your applications. Whether you’re building session-based login systems, using JWT for stateless authentication, or integrating OAuth for social logins, Node.js provides powerful tools and libraries to streamline these processes.
+              <br /><br />
+              By understanding the differences between various authentication methods and following best practices, you can ensure that your Node.js applications remain secure, scalable, and user-friendly.
+            </p>
+          </section>
+
+          {/* Post Tags and Share Row */}
+          <div className="border-t border-gray-700 pt-8 flex justify-between text-sm text-gray-400">
+            <span><strong>Post Tags :</strong></span>
+            <span><strong>Share :</strong></span>
+          </div>
         </div>
       </div>
     </div>
