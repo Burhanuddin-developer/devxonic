@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 export default function Footer() {
   return (
-    <footer className="page-section bg-[#0b0b17] text-white pt-24 pb-10">
+    <footer className="page-section text-white pt-24 pb-10">
       <div className="section-container grid md:grid-cols-4 grid-cols-1 gap-20">
         {/* Logo and Description */}
         <div className="flex flex-col md:w-2/2">

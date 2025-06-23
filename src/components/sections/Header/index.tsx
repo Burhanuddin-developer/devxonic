@@ -50,32 +50,32 @@ const serviceTabs: ServiceTab[] = [
       {
         label: "Android App Development",
         icon: <FaAndroid />,
-        href:"/Page/AppDevelopment/Android",
+        href: "/Page/AppDevelopment/Android",
       },
       {
         label: "iOS App Development",
         icon: <FaAppStore />,
-         href:"/Page/AppDevelopment/Ios",
+        href: "/Page/AppDevelopment/Ios",
       },
       {
         label: "Web App Development",
         icon: <FaDesktop />,
-         href:"/Page/WebApps",
+        href: "/Page/WebApps",
       },
       {
         label: "Realtime App Development",
         icon: <FaRegClock />,
-          href:"/Page/AppDevelopment/Realtime",
+        href: "/Page/AppDevelopment/Realtime",
       },
       {
         label: "React Native App Development",
         icon: <FaMobileAlt />,
-         href:"/Page/MobileApplication",
+        href: "/Page/MobileApplication",
       },
       {
         label: "FullStack App Development",
         icon: <FaCogs />,
-        href:"/Page/AppDevelopment/FullStack"
+        href: "/Page/AppDevelopment/FullStack",
       },
     ],
   },
@@ -85,42 +85,52 @@ const serviceTabs: ServiceTab[] = [
       {
         label: "Wordpress",
         icon: <FaWordpress />,
+        href: "/Page/Wordpress",
       },
       {
         label: "Shopify",
         icon: <FaShopify />,
+        href: "/Page/Shopify",
       },
       {
         label: "Web Development & Design",
         icon: <FaPalette />,
+        href: "/Page/WebDevelopment",
       },
       {
         label: "Webflow",
         icon: <FaWaveSquare />,
+        href: "/Page/WebDevelopment/Webflow",
       },
       {
         label: "Website Design",
         icon: <FaGlobe />,
+        href: "/Page/WebsiteDesign",
       },
       {
         label: "Full Stack Web Application Development",
         icon: <FaCogs />,
+        href: "/Page/AppDevelopment/FullStack",
       },
       {
         label: "Website Redesign",
         icon: <FaTools />,
+        href: "/Page/WebDevelopment/WebsiteRedesign",
       },
       {
         label: "UI/UX",
         icon: <FaObjectGroup />,
+        href: "/Page/WebDevelopment/UiUxDesign",
       },
       {
         label: "Custom Website Design",
         icon: <FaPencilRuler />,
+        href: "/Page/WebDevelopment/WebsiteDesign",
       },
       {
         label: "Product Research",
         icon: <FaParking />,
+        href: "/Page/WebDevelopment/ProductResearch",
       },
     ],
   },
@@ -227,7 +237,6 @@ const Header = () => {
     setIsServicesOpen(false);
   };
 
-
   return (
     <header className="relative top-0 left-0 w-full z-50 text-white backdrop-blur-md">
       <div className="flex items-center justify-between px-6 py-6 md:px-8 md:py-8">
@@ -281,7 +290,6 @@ const Header = () => {
                 <ServiceTabs />
               </div>
             )}
-
           </div>
 
           <div
@@ -311,19 +319,34 @@ const Header = () => {
                   }, 300);
                 }}
               >
-                <button onClick={() => router.push("/Page/MobileApplication")} className="block px-4 py-4 hover:bg-purple-100">
+                <button
+                  onClick={() => router.push("/Page/MobileApplication")}
+                  className="block px-4 py-4 hover:bg-purple-100"
+                >
                   Mobile Application
                 </button>
-                <button onClick={() => router.push("/Page/WebApps")} className="block px-4 py-4 hover:bg-purple-100">
+                <button
+                  onClick={() => router.push("/Page/WebApps")}
+                  className="block px-4 py-4 hover:bg-purple-100"
+                >
                   Web Apps
                 </button>
-                <button onClick={() => router.push("/Page/Wordpress")} className="block px-4 py-4 hover:bg-purple-100">
+                <button
+                  onClick={() => router.push("/Page/Wordpress")}
+                  className="block px-4 py-4 hover:bg-purple-100"
+                >
                   Wordpress
                 </button>
-                <button onClick={() => router.push("/Page/Shopify")} className="block px-4 py-4 hover:bg-purple-100">
+                <button
+                  onClick={() => router.push("/Page/Shopify")}
+                  className="block px-4 py-4 hover:bg-purple-100"
+                >
                   Shopify
                 </button>
-                <button onClick={() => router.push("/Page/UiProjects")} className="block px-4 py-4 hover:bg-purple-100">
+                <button
+                  onClick={() => router.push("/Page/UiProjects")}
+                  className="block px-4 py-4 hover:bg-purple-100"
+                >
                   UI Projects
                 </button>
               </div>
@@ -403,7 +426,6 @@ const Header = () => {
 
 export default Header;
 
-
 const ServiceTabs = () => {
   const [activeTab, setActiveTab] = useState(serviceTabs[0].name);
 
@@ -417,10 +439,11 @@ const ServiceTabs = () => {
           <button
             key={tab.name}
             onClick={() => setActiveTab(tab.name)}
-            className={`block w-full text-left px-4 py-5 rounded-2xl mb-2 text-sm font-medium transition ${tab.name === activeTab
+            className={`block w-full text-left px-4 py-5 rounded-2xl mb-2 text-sm font-medium transition ${
+              tab.name === activeTab
                 ? "bg-gradient-to-b from-[#3b0087] to-[#0b0b17] text-white "
                 : "text-pink-100/80  border border-gray-100 hover:bg-gradient-to-t from-[#3b0087] to-[#0b0b17] "
-              }`}
+            }`}
           >
             {tab.name}
           </button>
@@ -431,10 +454,14 @@ const ServiceTabs = () => {
       <div className="w-2/3 pl-4 overflow-y-auto h-auto ">
         <ul className="space-y-3">
           {currentTab?.description?.map((point, index) => (
-            <Link key={index} href={point.href ?? "#"} className="flex items-start text-pink-100/250 text-sm">
-                 <span className="mt-1 mr-3 text-lg">{point.icon}</span>
+            <Link
+              key={index}
+              href={point.href ?? "#"}
+              className="flex items-start text-pink-100/250 text-sm"
+            >
+              <span className="mt-1 mr-3 text-lg">{point.icon}</span>
               <span>{point.label}</span>
-              </Link>
+            </Link>
           ))}
         </ul>
       </div>
@@ -454,10 +481,11 @@ const ServiceTabsMobile = () => {
           <button
             key={tab.name}
             onClick={() => setActiveTab(tab.name)}
-            className={`px-3 py-1.5 rounded-full text-sm font-semibold ${tab.name === activeTab
-              ? "bg-white text-black"
-              : "bg-gray-800 text-gray-300"
-              }`}
+            className={`px-3 py-1.5 rounded-full text-sm font-semibold ${
+              tab.name === activeTab
+                ? "bg-white text-black"
+                : "bg-gray-800 text-gray-300"
+            }`}
           >
             {tab.name}
           </button>
@@ -475,4 +503,3 @@ const ServiceTabsMobile = () => {
     </div>
   );
 };
-
