@@ -80,7 +80,7 @@ export default function CardBox({ projects }: CardBoxProps) {
                 alt={project.title}
                 width={500}
                 height={300}
-                className="w-full h-full object-cover" 
+                className="w-full h-60  object-cover" 
               />
             </div>
             <div className="p-5 text-white">
