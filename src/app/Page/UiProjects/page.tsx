@@ -4,6 +4,7 @@ import Footer from "@/components/sections/Footer";
 import Header from "@/components/sections/Header";
 import Vision from "@/components/sections/Your Vision";
 
+
 export default function UiProjects(){
   const projects = [
   {
@@ -26,6 +27,7 @@ export default function UiProjects(){
     description:
       'The Express Lumpers portfolio website is a comprehensive showcase of lumper delivery, packaging, and machine operator services.',
     image: 'https://testweb.devxonic.com/wp-content/uploads/2024/08/Oto-buck-3-1024x576.jpg.webp',
+    link:"/Page/UiProjects/Otobucks"
   },
 ];
     return(
@@ -36,7 +38,7 @@ export default function UiProjects(){
             description="Explore our UI projects that blend cutting-edge technology with creative solutions, delivering exceptional results tailored to your needs."
             className="md:w-2xl justify-center"
         />
-          <CardGrid projects={projects}  />;
+          <CardGrid projects={projects}   />;
           <Vision/>
           <Footer/>
         </>

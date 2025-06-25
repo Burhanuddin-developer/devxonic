@@ -7,14 +7,21 @@ import {
   FaAppStore,
   FaAws,
   FaBars,
-  FaCheckCircle,
+  FaBox,
+  FaBriefcase,
+  FaBroadcastTower,
+  FaCalendarAlt,
   FaCloud,
+  FaCodeBranch,
   FaCogs,
+  FaCube,
   FaDesktop,
   FaDocker,
   FaGithub,
   FaGitlab,
+  FaGlasses,
   FaGlobe,
+  FaHospital,
   FaJenkins,
   FaLinux,
   FaMobileAlt,
@@ -25,10 +32,14 @@ import {
   FaRegClock,
   FaRobot,
   FaShopify,
+  FaSync,
   FaTimes,
   FaTools,
+  FaUserTie,
   FaWaveSquare,
   FaWordpress,
+  FaWrench,
+  FaYoutube,
 } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
@@ -105,7 +116,7 @@ const serviceTabs: ServiceTab[] = [
       {
         label: "Website Design",
         icon: <FaGlobe />,
-        href: "/Page/WebsiteDesign",
+        href: "/Page/WebDevelopment/WebsiteDesign",
       },
       {
         label: "Full Stack Web Application Development",
@@ -140,58 +151,72 @@ const serviceTabs: ServiceTab[] = [
       {
         label: "  AWS",
         icon: <FaAws />,
+        href: "/Page/Devops/AWS",
       },
       {
         label: "Azure",
         icon: <FaCloud />,
+        href: "/Page/Devops/Azure",
       },
       {
         label: "Kubernetes",
-        icon: <FaCheckCircle />,
+        icon: <FaCube />,
+        href: "/Page/Devops/Kubernetes",
       },
       {
         label: "Jenkins",
         icon: <FaJenkins />,
+        href: "/Page/Devops/Jenkins",
       },
       {
         label: "Gitlab",
         icon: <FaGitlab />,
+        href: "/Page/Devops/Gitlab",
       },
       {
         label: "Github / Github Actions",
         icon: <FaGithub />,
+        href: "/Page/Devops/Github",
       },
       {
         label: "Webhooks",
         icon: <FaRobot />,
+        href: "/Page/Devops/Webhooks",
       },
       {
         label: "Docker",
         icon: <FaDocker />,
+        href: "/Page/Devops/Docker",
       },
       {
         label: "CI/CD",
-        icon: <FaCheckCircle />,
+        icon: <FaCodeBranch />,
+        href: "/Page/Devops/CiCd",
       },
       {
         label: "Linux Administration",
         icon: <FaLinux />,
+        href: "/Page/Devops/Linux",
       },
       {
         label: "S3 Services",
-        icon: <FaCheckCircle />,
+        icon: <FaBox />,
+        href: "/Page/Devops/Services",
       },
       {
         label: "Terraform",
-        icon: <FaCheckCircle />,
+        icon: <FaWrench />,
+        href: "/Page/Devops/Terraform",
       },
       {
         label: "Serverless",
-        icon: <FaCheckCircle />,
+        icon: <FaBroadcastTower />,
+        href: "/Page/Devops/Serverless",
       },
       {
         label: "GCP",
-        icon: <FaCheckCircle />,
+        icon: <FaCloud />,
+        href: "/Page/Devops/GCP",
       },
     ],
   },
@@ -199,20 +224,39 @@ const serviceTabs: ServiceTab[] = [
     name: "Industries",
     description: [
       {
-        label: "AWS / GCP / Azure Deployment",
-        icon: <FaCloud className="text-purple-600" />,
+        label: "  Healthcare App Development",
+        icon: <FaHospital />,
+        href: "/Page/Industries/Healthcare",
       },
       {
-        label: "Serverless Architecture",
-        icon: <FaCloud className="text-purple-600" />,
+        label: "Booking Management App Development",
+        icon: <FaCalendarAlt />,
+        href: "/Page/Industries/Booking",
       },
       {
-        label: "CI/CD Pipelines",
-        icon: <FaCloud className="text-purple-600" />,
+        label: "Job Management App Development",
+        icon: <	FaBriefcase />,
+        href: "/Page/Industries/JobManagement",
       },
       {
-        label: "Cloud Migration",
-        icon: <FaCloud className="text-purple-600" />,
+        label: "Freelance Platform App Development",
+        icon: <	FaUserTie/>,
+        href: "/Page/Industries/FreelancePlatform",
+      },
+      {
+        label: "Social Media App Development",
+        icon: <FaYoutube/>,
+        href: "/Page/Industries/SocialMedia",
+      },
+      {
+        label: "AR/VR App Develpoment",
+        icon: <FaGlasses />,
+        href: "/Page/Industries/ARVR",
+      },
+      {
+        label: "Realtime Applications",
+        icon: <FaSync/>,
+        href: "/Page/Industries/Realtime",
       },
     ],
   },
@@ -439,11 +483,10 @@ const ServiceTabs = () => {
           <button
             key={tab.name}
             onClick={() => setActiveTab(tab.name)}
-            className={`block w-full text-left px-4 py-5 rounded-2xl mb-2 text-sm font-medium transition ${
-              tab.name === activeTab
+            className={`block w-full text-left px-4 py-5 rounded-2xl mb-2 text-sm font-medium transition ${tab.name === activeTab
                 ? "bg-gradient-to-b from-[#3b0087] to-[#0b0b17] text-white "
                 : "text-pink-100/80  border border-gray-100 hover:bg-gradient-to-t from-[#3b0087] to-[#0b0b17] "
-            }`}
+              }`}
           >
             {tab.name}
           </button>
@@ -481,11 +524,10 @@ const ServiceTabsMobile = () => {
           <button
             key={tab.name}
             onClick={() => setActiveTab(tab.name)}
-            className={`px-3 py-1.5 rounded-full text-sm font-semibold ${
-              tab.name === activeTab
+            className={`px-3 py-1.5 rounded-full text-sm font-semibold ${tab.name === activeTab
                 ? "bg-white text-black"
                 : "bg-gray-800 text-gray-300"
-            }`}
+              }`}
           >
             {tab.name}
           </button>
