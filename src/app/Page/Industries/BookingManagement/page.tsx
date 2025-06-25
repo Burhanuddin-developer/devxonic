@@ -3,7 +3,7 @@ import Footer from "@/components/sections/Footer";
 import Header from "@/components/sections/Header";
 import Vision from "@/components/sections/Your Vision";
 
-export default function Booking(){
+export default function BookingManagement(){
 
     return(
         <>

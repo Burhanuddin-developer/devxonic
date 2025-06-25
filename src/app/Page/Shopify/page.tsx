@@ -13,6 +13,7 @@ export default function Shopify() {
     description:
       'Maiesa is a Shopify e-commerce platform dedicated to offering a delightful shopping experience for customers looking for toys, keychains, and bags',
     image: 'https://testweb.devxonic.com/wp-content/uploads/2025/05/Affordable-Solar-Panel-Cleaning-Products-For-Sale-In-Pakistan-PVCARE-%E2%80%93-PVCARE-05-08-2025_10_33_PM-768x4017.png',
+    link:"/Page/Shopify/SMby"
   },
   {
     title: 'Express Lumpers',
@@ -20,6 +21,7 @@ export default function Shopify() {
     description:
       'The Express Lumpers portfolio website is a comprehensive showcase of lumper delivery, packaging, and machine operator services.',
     image: 'https://testweb.devxonic.com/wp-content/uploads/2025/05/Maiesa-05-08-2025_10_33_PM-768x2803.png',
+     link:"/Page/Shopify/SMby"
   },
   {
     title: 'SMbyHinaFahad',
@@ -27,6 +29,7 @@ export default function Shopify() {
     description:
       'SMbyHinaFahad is a Shopify e-commerce platform dedicated to offering a delightful shopping experience for customers looking for toys, keychains, and bags',
     image:'https://testweb.devxonic.com/wp-content/uploads/2024/08/SM-1024x576.jpg.webp',
+     link:"/Page/Shopify/SMby"
   },
     
 ];

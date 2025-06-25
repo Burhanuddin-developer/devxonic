@@ -11,13 +11,13 @@ interface ImageGalleryProps {
     height?: number;
     className?: string;
   }[];
+  className?: string;
 }
-
-export default function ImageGallery({ title, images }: ImageGalleryProps) {
+export default function ImageGallery({ title, images, className }: ImageGalleryProps) {
   return (
     <div className="mt-8">
       {title && <h3 className="text-2xl font-semibold mb-6">{title}</h3>}
-      <div className="grid md:grid-cols-4">
+      <div className={`${className ? ` ${className}` : ""}`}>
         {images.map((img:any, index:any) => (
           <div key={index}>
             <Image
@@ -33,3 +33,4 @@ export default function ImageGallery({ title, images }: ImageGalleryProps) {
     </div>
   );
 }
+

@@ -13,6 +13,7 @@ export default function UiProjects(){
     description:
       'The Express Lumpers portfolio website is a comprehensive showcase of lumper delivery, packaging, and machine operator services.',
     image: 'https://testweb.devxonic.com/wp-content/uploads/2024/10/Cover-1024x576.png.webp',
+      link: "/Page/UiProjects/FTW"
   },
     {
     title: 'Buttsapp',
@@ -20,6 +21,7 @@ export default function UiProjects(){
     description:
       'Buttsapp Media needed a sleek, modern portfolio website to showcase its wide range of media services, including branding, content creation, and digital marketing.',
     image: 'https://testweb.devxonic.com/wp-content/uploads/2024/08/buttsapp-1024x576.jpg.webp',
+    link: "/Page/UiProjects/Buttsapp"
   },
     {
     title: 'Otobucks',

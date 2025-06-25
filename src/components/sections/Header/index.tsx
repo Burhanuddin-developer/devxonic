@@ -231,7 +231,7 @@ const serviceTabs: ServiceTab[] = [
       {
         label: "Booking Management App Development",
         icon: <FaCalendarAlt />,
-        href: "/Page/Industries/Booking",
+        href: "/Page/Industries/BookingManagement",
       },
       {
         label: "Job Management App Development",
