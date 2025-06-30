@@ -6,9 +6,9 @@ import { motion } from 'framer-motion';
 
 export default function Vision() {
   return (
-    <div className="page-section ">
-      <div className="w-full bg-gradient-to-b from-[#0b0b17] via-[#0b0b17] to-[#7146e7] rounded-3xl p-10 text-center shadow-2xl border border-gray-700 section-container">
-        <motion.div 
+    <div className="page-section">
+      <div className="w-full md:h-120 bg-gradient-to-b from-[#0b0b17] via-[#0b0b17] to-[#693de2] rounded-3xl p-15 text-center shadow-2xl border border-gray-700 section-container">
+        <motion.div
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}

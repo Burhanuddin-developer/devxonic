@@ -22,7 +22,7 @@ export default function Footer() {
           <p className="text-sm mb-6 max-w-xs">
             Tailoring Digital Excellence for Your Unique Vision
           </p>
-          <div className="flex space-x-3">
+          <div className="flex lg:space-x-3">
             <div className="border rounded-full p-3">
               <FaFacebookF />
             </div>
