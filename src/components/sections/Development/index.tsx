@@ -33,7 +33,7 @@ export default function Development() {
     ];
 
     return (
-        <div className="min-h-screen bg-[#0b0b17] text-white py-12 md:px-20 page-section">
+        <div className="min-h-screen text-white py-12 md:px-20 page-section">
             <div className="max-w-5xl mx-auto section-container">
                 <section className="mb-12">
                     <h2 className="text-2xl font-bold mb-4">Introduction</h2>

@@ -21,7 +21,7 @@ const StatCounter: React.FC<StatCounterProps> = ({ stats }) => {
   return (
     <div
       ref={ref}
-      className="bg-[#0b0b17] border border-white rounded-3xl w-full md:mt-30 py-16 px-6  flex flex-col md:flex-row justify-around items-center divide-y md:divide-y-0 md:divide-x divide-white/80 space-y-10 md:space-y-0 "
+      className=" border border-white rounded-3xl w-full md:mt-30 py-16 px-6  flex flex-col md:flex-row justify-around items-center divide-y md:divide-y-0 md:divide-x divide-white/80 space-y-10 md:space-y-0 "
     >
       {stats.map((stat, index) => (
         <div key={index} className="text-center px-8 space-y-3 py-5  section-container">

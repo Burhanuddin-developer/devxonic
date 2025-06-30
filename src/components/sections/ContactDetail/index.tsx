@@ -5,7 +5,7 @@ import { FaPhoneAlt, FaEnvelope, FaFacebookF, FaTwitter, FaYoutube, FaLinkedinIn
 
 export default function ContactSection() {
   return (
-    <div className="bg-[#080717] text-white  flex flex-col lg:flex-row gap-40   min-h-screen page-section ">
+    <div className=" text-white  flex flex-col lg:flex-row gap-40   min-h-screen page-section ">
       {/* Left Column */}
       <div className=" section-container">
         <h2 className="text-4xl font-light">

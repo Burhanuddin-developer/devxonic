@@ -6,7 +6,7 @@ export default function Main() {
       <main className="relative min-h-screen bg-gradient-to-t from-[#3b0087] via-[#0b0b17]  flex justify-center page-section ">
         <div className="max-w-6xl w-full grid md:grid-cols-2 gap-10 items-center section-container">
           <div className='mb-30'>
-            <h1 className="text-5xl md:text-6xl font-bold text-white leading-snug mb-6">
+            <h1 className="text-3xl md:text-6xl font-bold text-white leading-snug mb-6">
               Your Partner in <br />
               <span className="text-gray-300">Mobile, Desktop,</span><br />
               <span className="text-white">and Web App</span><br />
@@ -26,7 +26,7 @@ export default function Main() {
           </div>
           <div className="relative w-full mb-30">
             <img
-              src="https://testweb.devxonic.com/wp-content/uploads/2024/08/Asset-2.png.webp"
+              src="/assets/images/Asset-2.png.webp"
               alt="3D Mesh"
               className="object-contain w-full "
             />

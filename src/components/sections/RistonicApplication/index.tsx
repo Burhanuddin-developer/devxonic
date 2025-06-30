@@ -1,10 +1,32 @@
 "use client";
 
 import ImageGallery from "@/components/base/image";
-import { FaMobileAlt, FaLaptop, FaPalette } from "react-icons/fa";
-import { FaChartBar, FaTable, FaFilter } from "react-icons/fa";
+import { FaTable, FaFilter, FaChartLine } from "react-icons/fa";
 
 export default function RistonicApplication() {
+  const cards = [
+        {
+            icon: <FaChartLine className="text-3xl mb-4" />,
+            title: "Real-Time Data Analytics",
+            description:
+                "The dashboard offers real-time analytics for quick, informed decisions. It supports line, pie, and bar charts to visualize trends and performance.",
+        },
+        {
+            icon: <FaTable className="text-3xl mb-4" />,
+            title: "Comprehensive Asset Tables",
+            description:
+                "Users can view detailed, sortable tables for easy access to all asset information.",
+            bg: "bg-black text-white",
+        },
+        {
+            icon: <FaFilter className="text-3xl mb-4" />,
+            title: "Advanced Filtering Options",
+            description:
+                "Ristonic’s Asset Manager provides advanced, real-time filtering to effortlessly sort and manage assets by category, status, location, and more.",
+            bg: "bg-black text-white",
+        },
+    ];
+
   const images = [
     {
       src: "https://testweb.devxonic.com/wp-content/uploads/2024/12/16_ipad_mockup-1536x864.jpg.webp",
@@ -154,6 +176,19 @@ export default function RistonicApplication() {
             </p>
           </div>
         </div>
+        
+                <div className="grid md:grid-cols-3 gap-8 md:w-240">
+                    {cards.map((card, idx) => (
+                        <div
+                            key={idx}
+                            className={`rounded-2xl p-10 border border-gray-700 hover:shadow-lg transition bg-gradient-to-b  hover:from-black hover:via-black via-20% hover:to-purple-700`}
+                        >
+                            <div className="ml-22 mb-6">{card.icon}</div>
+                            <h3 className="text-md font-bold text-center mb-8">{card.title}</h3>
+                            <p className="text-md text-gray-300 text-center">{card.description}</p>
+                        </div>
+                    ))}
+                </div>
       </div>
       <ImageGallery
         title="Join Ristonic Now"

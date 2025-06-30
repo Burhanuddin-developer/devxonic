@@ -21,6 +21,7 @@ export default function WebApps() {
     description:
       'Washat is a car washing app that features a comprehensive dashboard to efficiently manage Shops, Invoices, Orders, Ratings, and Reviews.',
     image: 'https://testweb.devxonic.com/wp-content/uploads/2024/10/2-1-1024x576.jpeg.webp',
+    link: "/Page/WebApps/Washta"
   },
   {
     title: 'Express Lumpers',

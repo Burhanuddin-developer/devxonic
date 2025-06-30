@@ -5,7 +5,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 const HeroSection = () => {
   return (
-    <div className="min-h-screen bg-[#0b0b17] flex items-center justify-center p-20 page-section">
+    <div className="min-h-screen flex items-center justify-center p-20 page-section">
       <div className="max-w-7xl w-full grid md:grid-cols-2 gap-12 items-center">
          <motion.div
         className="text-center mb-12 selection-container"

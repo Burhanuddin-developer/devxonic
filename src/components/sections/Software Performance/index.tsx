@@ -30,7 +30,7 @@ const services = [
 
 export default function SoftwarePerformance() {
   return (
-    <div className="min-h-screen bg-[#0b0b17] flex flex-col items-center py-16 px-4 text-white page-section">
+    <div className="min-h-screen flex flex-col items-center py-16 px-4 text-white page-section">
       <motion.h2
         className="text-5xl font-semibold mb-12 text-center selection-container"
         initial={{ opacity: 0, y: 30 }}

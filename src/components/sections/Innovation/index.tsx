@@ -1,13 +1,35 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { FaLeaf, FaCube, FaArrowUp } from "react-icons/fa6";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Innovation() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
-    <div className="bg-[#0b0b17] text-white py-20 px-6 lg:px-24 page-section">
+    <div className="text-white py-20 px-6 lg:px-24 page-section relative z-0">
+      {/* Modal */}
+      {isModalOpen && (
+        <div className="fixed inset-0 z-50 bg-black bg-opacity-80 flex items-center justify-center p-4">
+          <div className="relative w-full max-w-4xl h-[80vh] bg-white rounded-xl overflow-hidden">
+            <iframe
+              src="http://localhost:3000"
+              className="w-full h-full"
+              title="Devxonic Website"
+            ></iframe>
+            <button
+              className="absolute top-2 right-2 bg-black text-white rounded-full px-4 py-1 hover:bg-red-600 transition"
+              onClick={() => setIsModalOpen(false)}
+            >
+              ✕
+            </button>
+          </div>
+        </div>
+      )}
+
       <div className="flex flex-col-reverse md:flex-row gap-10 items-stretch section-container">
-        {/* Right side (Text content) — shows first on small, right on large */}
+        {/* Right side */}
         <div className="order-3 md:order-2 p-4 sm:p-8 rounded-3xl flex flex-col justify-between flex-1">
           <div className="space-y-6">
             <h2 className="text-2xl sm:text-4xl font-semibold leading-tight md:text-left">
@@ -41,11 +63,9 @@ export default function Innovation() {
           </div>
         </div>
 
-        {/* Left side (images + icons) — shows second on small, left on large */}
+        {/* Left side */}
         <div className="order-2 md:order-1 flex flex-col items-start gap-6 flex-1">
           <div className="flex flex-col sm:flex-row gap-4 w-full items-center sm:items-start">
-            {/* Icons + image stack */}
-            {/* Icons + image stack */}
             <div className="flex flex-col gap-8 items-center sm:items-start">
               <div className="flex gap-4 sm:gap-8 justify-center sm:justify-start">
                 <div className="bg-[#1c1c29] p-3 rounded-xl">
@@ -59,8 +79,7 @@ export default function Innovation() {
                 </div>
               </div>
 
-              {/* Image below icons */}
-              <div className="bg-gray-300 sm:w-80  mx-auto sm:mx-0 rounded-xl overflow-hidden w-full h-60 sm:h-54">
+              <div className="bg-gray-300 sm:w-80 mx-auto sm:mx-0 rounded-xl overflow-hidden w-full h-60 sm:h-54">
                 <Image
                   src="/assets/images/using-modern-technologies.jpg"
                   alt="Woman"
@@ -72,25 +91,26 @@ export default function Innovation() {
             </div>
 
             {/* Gradient play box */}
-            <div className="bg-gradient-to-b from-transparent to-[#6e4cff] w-full sm:w-48 h-32 sm:h-85 rounded-xl flex items-center justify-center border-t border-white/80 mx-auto sm:ml-2 mt-4 sm:mt-0">
+            <div
+              onClick={() => setIsModalOpen(true)}
+              className="cursor-pointer bg-gradient-to-b from-transparent to-[#6e4cff] w-full sm:w-48 h-32 sm:h-85 rounded-xl flex items-center justify-center border-t border-white/80 mx-auto sm:ml-2 mt-4 sm:mt-0"
+            >
               <div className="w-12 h-12 bg-[#1c1c29] rounded-full flex items-center justify-center">
-                <div className="text-white text-xl">▶</div>
+                <span className="text-white text-xl">▶</span>
               </div>
             </div>
           </div>
 
           {/* Bottom full-width image */}
-   
-<div className="rounded-xl overflow-hidden w-full h-48 sm:h-64">
-  <Image
-    src="/assets/images/female-developer-checking.avif"
-    alt="Coding"
-    width={800}
-    height={256}
-    className="object-cover w-full h-full"
-  />
-</div>
-
+          <div className="rounded-xl overflow-hidden w-full h-48 sm:h-64">
+            <Image
+              src="/assets/images/female-developer-checking.avif"
+              alt="Coding"
+              width={800}
+              height={256}
+              className="object-cover w-full h-full"
+            />
+          </div>
         </div>
       </div>
     </div>

@@ -39,7 +39,7 @@ const expertiseItems = [
 
 export default function ExcellenceSection() {
   return (
-    <div className="min-h-screen bg-gradient-to-t from-[#3b0087] via-[#0b0b17] to-[#0b0b17] text-white px-4 sm:px-6 lg:px-20 py-20 page-section">
+    <div className="min-h-screen bg-gradient-to-t from-[#3b0087] via-[#010314] to-[#010314] text-white px-4 sm:px-6 lg:px-20 py-20 page-section">
       <div className="max-w-7xl mx-auto space-y-16 selection-container">
         {/* Heading */}
         <motion.div

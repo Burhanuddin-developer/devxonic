@@ -16,7 +16,7 @@ export default function Footer() {
               alt="devxonic"
               width={500}
               height={100}
-              className="w-full h-20 "
+              className="image h-20 "
             />
           </div>
           <p className="text-sm mb-6 max-w-xs">

@@ -22,7 +22,7 @@ const FaqAccordion: React.FC<FaqAccordionProps> = ({ faqData, title = "Frequentl
   };
 
   return (
-    <div className="min-h-screen bg-[#0b0b17] flex items-center justify-center px-4 py-20 page-section">
+    <div className="min-h-screen flex items-center justify-center px-4 py-20 page-section">
       <div className="max-w-3xl w-full rounded-xl section-container">
         <h2 className="text-3xl font-semibold text-center text-white py-10">
           <span className="text-white/30">{title.split(' ')[0]} </span>

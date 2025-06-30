@@ -44,7 +44,7 @@ const stats = [
 ];
 export default function ValuesSection() {
   return (
-    <><section className="bg-[#0b0b17] text-white py-20 px-4 page-section">
+    <><section className=" text-white py-20 px-4 page-section">
           <div className="max-w-6xl mx-auto text-center section-container">
               <h2 className="text-3xl md:text-5xl font-semibold mb-12 leading-snug">
                   <span className="text-gray-400">Guided by</span>{' '}

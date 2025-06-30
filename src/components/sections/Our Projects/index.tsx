@@ -2,37 +2,33 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import washta from '../../../../public/assets/images/washta.jpeg';
-import kickers from '../../../../public/assets/images/kickers.jpeg';
-import rishtonic from '../../../../public/assets/images/ristonic.jpg';
-import medical from '../../../../public/assets/images/alan_medical.png';
 
 const projects = [
   {
     title: 'Washta',
     description: 'Washta Software is a comprehensive showcase of lumper delivery, packaging, and machine operator services.',
-    image: washta,
+    image: '/assets/images/washta.jpeg',
     alt: 'Washta Project',
     reverse: false,
   },
   {
     title: 'Kickers',
     description: 'Kickers is a comprehensive mobile application designed to simplify the process of car and home maintenance by connecting users with trusted service providers.',
-    image: kickers,
+    image: '/assets/images/kickers.jpeg',
     alt: 'Kickers Project',
     reverse: true,
   },
   {
     title: 'Ristonic',
     description: 'Ristonic is a comprehensive mobile application designed to simplify the process of car and home maintenance by connecting users with trusted service providers.',
-    image: rishtonic,
+    image: '/assets/images/ristonic.jpg',
     alt: 'Ristonic Project',
     reverse: false,
   },
   {
     title: 'AlanMD Medical App',
     description: 'AlanMD is an innovative mobile application designed to bridge the gap between patients, doctors, and nurses by providing a seamless platform for online consultations.',
-    image: medical,
+    image: '/assets/images/alan_medical.png',
     alt: 'AlanMD Project',
     reverse: true,
   },
@@ -40,7 +36,7 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section className="bg-[#0b0b17] text-white py-20 px-6 md:px-20 page-section">
+    <section className=" text-white py-20 px-6 md:px-20 page-section">
       {/* Title with fade-in */}
       <motion.div
         initial={{ opacity: 0, y: -50 }}
@@ -72,6 +68,8 @@ export default function Projects() {
               src={project.image}
               alt={project.alt}
               className="w-full h-auto object-cover"
+              width={800}
+              height={500}
             />
           </div>
           <div>

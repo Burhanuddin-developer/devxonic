@@ -288,8 +288,9 @@ const Header = () => {
           <Image
             src="https://testweb.devxonic.com/wp-content/uploads/2024/08/devxonic-logo-white-1.png"
             alt="Devxonic Logo"
-            width={200}
-            height={80}
+            width={130}
+            height={50}
+            className="image"
           />
         </a>
 

@@ -176,11 +176,11 @@ export default function KickersApplication() {
           </div>
         </div>
       </div>
-      <ImageGallery title="Join Kickers Now" images={images} />
-      <ImageGallery title="Profile Setup" images={Profile} />
-      <ImageGallery title="Reserve A Field" images={Field} />
-      <ImageGallery title="Settings" images={Settings} />
-      <ImageGallery title="Security" images={Security} />
+      <ImageGallery title="Join Kickers Now" images={images}  className="grid md:grid-cols-2 gap-4"/>
+      <ImageGallery title="Profile Setup" images={Profile} className="grid md:grid-cols-2 gap-4"/>
+      <ImageGallery title="Reserve A Field" images={Field} className="grid md:grid-cols-2 gap-4"/>
+      <ImageGallery title="Settings" images={Settings} className="grid md:grid-cols-2 gap-4"/>
+      <ImageGallery title="Security" images={Security} className="grid md:grid-cols-2 gap-4"/>
      <div className=" border-b-1 border-gray-500">
        <h2 className="text-3xl md:text-5xl font-bold mt-20">Conclusion</h2>
       <p className="text-gray-300 leading-relaxed mt-8 mb-30">

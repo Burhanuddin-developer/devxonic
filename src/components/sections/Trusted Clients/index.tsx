@@ -5,23 +5,14 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
-// Import your images
-import shipleap from '../../../../public/assets/images/ship.png.webp';
-import approach from '../../../../public/assets/images/approach.svg';
-import washta from '../../../../public/assets/images/Washta-300x74.webp';
-import ristonics from '../../../../public/assets/images/ristonic.svg';
-import murid from '../../../../public/assets/images/mwrid.svg';
-import radiant from '../../../../public/assets/images/radiant.svg';
-import alan from '../../../../public/assets/images/alan.svg';
-
 const clients = [
-  { img: shipleap, name: 'Shipleap' },
-  { img: approach, name: 'Approach' },
-  { img: washta, name: 'Washta' },
-  { img: ristonics, name: 'Ristonic' },
-  { img: murid, name: 'Murid' },
-  { img: radiant, name: 'Radiant' },
-  { img: alan, name: 'Alan Manevitz' },
+  { img: '/assets/images/ship.png.webp', name: 'Shipleap' },
+  { img: '/assets/images/approach.svg', name: 'Approach' },
+  { img: '/assets/images/Washta-300x74.webp', name: 'Washta' },
+  { img: '/assets/images/ristonic.svg', name: 'Ristonic' },
+  { img: '/assets/images/mwrid.svg', name: 'Murid' },
+  { img: '/assets/images/radiant.svg', name: 'Radiant' },
+  { img: '/assets/images/alan.svg', name: 'Alan Manevitz' },
 ];
 
 const getVisibleSlides = () => {
@@ -102,7 +93,7 @@ export default function TrustedClients() {
   if (!isMounted) return null;
 
   return (
-    <div className="bg-[#0b0b17] py-16 px-4 text-white overflow-hidden page-section">
+    <div className="py-16 px-4 text-white overflow-hidden page-section">
       {/* Title with fade-in on scroll */}
       <motion.div
         className="text-center mb-12 selection-container"

@@ -32,7 +32,7 @@ export default function Card({
   className , // optional className
 }: ReusableCardProps) {
   return (
-    <div className={`page-section bg-[#0b0b17]`}>
+    <div className={`page-section`}>
       <div className={`${className} w-full bg-gradient-to-b from-[#0b0b17] via-[#0b0b17] to-[#7146e7] rounded-3xl p-10 text-center shadow-2xl border border-gray-700 section-container`}>
         <motion.div
 

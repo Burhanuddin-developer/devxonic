@@ -29,6 +29,7 @@ export default function MobileApplication() {
     description:
       'AlanMD is an innovative mobile application designed to bridge the gap between patients, doctors, and nurses by providing a seamless platform for online consultations',
     image: 'https://testweb.devxonic.com/wp-content/uploads/2024/08/Alan-MD-Mock-1024x576.png.webp',
+      link: '/Page/MobileApplication/AlanMD',
   },
   {
     title: 'onlyFTW',
@@ -36,6 +37,7 @@ export default function MobileApplication() {
     description:
       'The Express Lumpers portfolio website is a comprehensive showcase of lumper delivery, packaging, and machine operator services.',
     image: 'https://testweb.devxonic.com/wp-content/uploads/2024/10/Cover-1024x576.png.webp',
+      link: '/Page/UiProjects/FTW',
   },
     {
     title: 'Otobucks',
@@ -43,6 +45,7 @@ export default function MobileApplication() {
     description:
       'The Express Lumpers portfolio website is a comprehensive showcase of lumper delivery, packaging, and machine operator services.',
     image: 'https://testweb.devxonic.com/wp-content/uploads/2024/08/Oto-buck-3-1024x576.jpg.webp',
+      link: '/Page/WebApps/Otobucks',
   },
 ];
   return (

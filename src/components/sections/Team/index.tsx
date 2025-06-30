@@ -26,7 +26,7 @@ const teamMembers = [
 
 export default function TeamSection() {
   return (
-    <section className=" text-white py-16 px-4 bg-gradient-to-t from-[#3b0087] via-[#0B0B17] to-[#0B0B17] page-section">
+    <section className=" text-white py-16 px-4 bg-gradient-to-t from-[#3b0087] via-[#010314] to-[#010314] page-section">
       <div className="max-w-7xl mx-auto section-container">
         <h2 className="text-4xl md:text-5xl font-light mb-12">
           Meet the <span className="text-white font-medium">professional cyber</span> <br/>team

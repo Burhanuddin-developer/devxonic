@@ -45,7 +45,7 @@ const Expertise = () => {
   });
 
   return (
-    <div className="min-h-screen bg-[#0b0b17] text-white px-4 py-20 space-y-16 page-section">
+    <div className="min-h-screen text-white px-4 py-20 space-y-16 page-section">
       {/* Top Section */}
       <div className="flex flex-col lg:flex-row items-center justify-between max-w-7xl mx-auto gap-12 selection-container" ref={ref}>
         {/* Left - Image */}
